@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styles from '../assets/css/register.module.css';
 const Register = () => {
 
@@ -59,7 +59,10 @@ const Register = () => {
                 <label>Password:</label>
                 <input className={styles.input} type="password" id="" value={data.password} placeholder="Password..." onChange={(e) => setData({ ...data, password: e.target.value })} required />
                 <button type='submit'>Register</button>
-
+                <div className='flex items-end flex-col w-full text-white'>
+                    <p>Already registered an account?</p>
+                    <Link to={'/login'}>Please, <span className='text-secondary font-bold'>Sign In</span></Link>
+                </div>
             </form>
         </div>
     );

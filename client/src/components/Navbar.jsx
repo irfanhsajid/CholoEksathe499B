@@ -1,15 +1,15 @@
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import styles from '../assets/css/navbar.module.css';
 import { UserContext } from "../context/userContext";
+import { Avatar } from "keep-react";
+import { CiLogout } from "react-icons/ci";
+import { IoIosLogIn } from "react-icons/io";
 
 const buttonStyle = {
   color: 'whitesmoke',
-  backgroundColor: '#EC3384',
   padding: '.3rem .6rem',
   borderRadius: '5px',
   width: '7rem',
-  fontWeight: 'bold',
   letterSpacing: '1px',
   cursor: 'pointer',
   marginRight: '10px'
@@ -21,41 +21,68 @@ const Navbar = () => {
 
   const handleLogout = async () => {
     logout();
-    navigate('/');
+    navigate('/home');
   }
 
   //console.log(user);
   return (
-    <div className={styles.container}>
-      <nav className={`${styles.navStyle} !bg-primary`} >
-        <Link className={styles.linkStyle}><span
-          className={styles.company_name}>CholoEksathe </span> </Link>
+    <div className="text-primary py-4 sticky top-0">
+      <nav className="flex items-center justify-between px-4" >
+        <p className="font-semibold text-primary text-[2rem]">CholoEksathe</p>
+        <ul className="px-1 py-1 flex justify-center items-center gap-10 ">
+          {navItems.map((data, index) => (
+            <li key={index} className="hover:border-b-2 hover:border-secondary hover:-translate-y-1 border-b-2 border-transparent  py-1 transition-all">
+              <Link to={data?.link}> {data.name}  </Link>
+            </li>
+          ))}
+
+        </ul>
         {
           !user && (
-            <div className={styles.login_signup_div}>
-              <Link className={styles.linkStyle} to='/login'>
-                <button style={{ ...buttonStyle, backgroundColor: 'transparent', border: '.4px solid white', marginRight: '-15px' }} >SIGN IN</button>
-              </Link>
-              <Link className={styles.linkStyle} to='/register'>
-                <button style={buttonStyle}>SIGN UP</button>
-              </Link>
-            </div>
+            <Link className="" to='/login'>
+              <button className="bg-primary flex gap-2 items-center" style={buttonStyle}><IoIosLogIn className="text-white text-xl font-bold" /> Sign In</button>
+            </Link>
           )
         }
 
         {
-          user && (<Link className={styles.linkStyle} to='/dashboard'> Dashboard {` : @  ${user?.name}`} </Link>)
-
+          user && <div className="flex items-center justify-end gap-7 w-[20%]">
+            <div className="flex gap-2 items-center"><Avatar className="" size="lg" /> <span>{user?.name}</span> </div>
+            <button className="bg-primary flex gap-2 items-center" style={{
+              ...buttonStyle, marginRight: '4%'
+            }} onClick={handleLogout}>Logout<CiLogout className="text-white text-xl font-bold" /> </button>
+          </div>
         }
 
-        {
-          user && (<button style={{
-            ...buttonStyle, marginRight: '4%'
-          }} onClick={handleLogout}>Logout</button>)
-        }
+
       </nav>
     </div>
   );
 };
 
 export default Navbar;
+
+const navItems = [
+  {
+    id: 1,
+    name: 'Home',
+    link: '/'
+  },
+  {
+    id: 2,
+    name: 'Events',
+    link: '/events',
+
+  },
+  {
+    id: 3,
+    name: 'Contact Us',
+    link: '/contact'
+  },
+  {
+    id: 4,
+    name: 'Dashboard',
+    link: '/dashboard'
+
+  },
+]

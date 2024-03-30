@@ -10,6 +10,7 @@ import ViewJobs from './pages/ViewJobs'
 import PrivateRoutes from './utils/PrivateRoutes'
 import { Fragment } from "react";
 import Home from "./pages/Home";
+import Events from "./pages/Events";
 
 const AllRoutes = () => {
 
@@ -24,8 +25,9 @@ const AllRoutes = () => {
             <Route path='/managejobs' element={<ManageJobs />} />
             <Route path='/editjobs/:_id' element={<EditJobs />} />
           </Route>
+          <Route path='/' element={<Home />} />
           <Route path='/home' element={<Home />} />
-          <Route path='/' element={<Login />} />
+          <Route path='/events' element={<Events />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
         </Routes>
