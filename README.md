@@ -1,4 +1,4 @@
-# MERN Job Portal
+# Cholo Eksathe :: Reunion Event Management Platform 
 
 Brief description of the project.
 
@@ -15,13 +15,13 @@ These instructions will help you set up and run the project on your local machin
 1. Clone the Git repository:
 
     ```bash
-    git clone https://github.com/irfanhsajid/Job-Portal--MERN.git
+    git clone https://github.com/irfanhsajid/CholoEksathe499B.git
     ```
 
 2. Navigate to the cloned directory:
 
     ```bash
-    cd Job-Portal--MERN
+    cd CholoEksathe499B
     ```
 
 3. Set up the React app:
@@ -65,8 +65,8 @@ In separate terminal windows, run the following commands:
 #### .env Dependency and CORS issue
 Though it is supposed to be fine, but the app will show errors because of Environment Variables Dependency and CORS policy. So first of all, open your server, make a .env file inside the root directory, and set this:
 ```js
-MONGO_URL= mongodb+srv://mern-job-portal:447pxlwbgNx2LIY8@cluster0.vaopm.mongodb.net/mern-job-poral?retryWrites=true&w=majority
-JWT_SECRET = 474764dhk944
+MONGO_URL= mongodb+srv://userName: password@cluster0.vaopm.mongodb.net/databaseName?retryWrites=true&w=majority
+JWT_SECRET = as you wish(may be: fjsdkfhsjkdweer)
 ```
 Then, fix the CORS origin issue.
 For this: 
