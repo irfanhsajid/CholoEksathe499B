@@ -1,10 +1,11 @@
 
 import axios from 'axios'
-import Navbar from './components/Navbar'
+
 import { UserContextProvider } from './context/userContext'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AllRoutes from './routes';
+import Footer from './shared/Footer';
 //cors policy setup
 // axios.defaults.baseURL = 'https://auth-skeleton-api.vercel.app';
 axios.defaults.baseURL = 'http://localhost:7000';
@@ -26,8 +27,9 @@ function App() {
           draggable
           pauseOnHover
           theme="light"
-          transition:Bounce/>
-      <AllRoutes/>
+          transition:Bounce />
+        <AllRoutes />
+        <Footer />
       </UserContextProvider>
     </>
   )

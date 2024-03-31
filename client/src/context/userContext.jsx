@@ -28,7 +28,6 @@ export function UserContextProvider({ children }) {
       setIsLoading(false)
     }
   }
-
   useEffect(() => {
     if (!user) {
       const token = getCookie("token");
@@ -44,7 +43,6 @@ export function UserContextProvider({ children }) {
   const logout = async () => {
     try {
       await axios.post('/logout');
-      // Clear the user data in the context or state immediately after logout
       setUser(null);
       deleteCookie("token")
       toast.success("logout Successful!")

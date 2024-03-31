@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { toast } from 'react-toastify';
 import { Link, useNavigate } from 'react-router-dom';
 import styles from '../assets/css/register.module.css';
+import { IoArrowBackCircleOutline } from 'react-icons/io5';
 const Register = () => {
 
     const [data, setData] = useState({
@@ -46,7 +47,7 @@ const Register = () => {
         <div data-aos="flip-left"
             data-aos-easing="linear"
             data-aos-duration="300"
-            className={`${styles.container}`}>
+            className={`${styles.container} !min-h-screen` }>
             <h1 style={{ textAlign: 'center', fontSize: '1.4rem', marginTop: '20px' }}>Register First To Explore Features</h1>
             <form action="
             " className={`${styles.form} !bg-primary`} onSubmit={registerUser}>
@@ -64,6 +65,8 @@ const Register = () => {
                     <Link to={'/login'}>Please, <span className='text-secondary font-bold'>Sign In</span></Link>
                 </div>
             </form>
+            
+            <Link className=' py-1 flex mx-auto my-4 items-center justify-center w-[15%] gap-1 border-secondary' to={'/home'}> <IoArrowBackCircleOutline className='text-secondary text-2xl hover:-translate-x-1 transition-all animate-pulse' /> Go Back </Link>
         </div>
     );
 };

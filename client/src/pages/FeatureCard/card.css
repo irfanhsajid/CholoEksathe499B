@@ -1,0 +1,25 @@
+.place-card{
+    height: 280px;
+    overflow: hidden;
+    width: 450px;
+}
+.place-card img{
+    height: 280px;
+    width: 100%;
+    transition: .5s;
+    border-radius: 20px;
+}
+.place-card img:hover{
+    transform: scale(1.07);
+    cursor: zoom-in;
+    border-radius: 20px;
+}
+.fa-arrow-right{
+    color: red;
+    transition: .4s;
+
+}
+.fa-arrow-right:hover{
+    transform:translateX(5px);
+    cursor: pointer;
+}

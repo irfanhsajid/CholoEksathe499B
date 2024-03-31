@@ -7,14 +7,14 @@ const test = (req, res) => {
   res.send("Server test is succeed!");
 }
 
-async function insert(){
-  await User.create({
-    name:"Sajid 2",
-    email:"sajddsd@gmail.com",
-    password:"weysdkfkds636",
-  })
-}
-insert();
+// async function insert(){
+//   await User.create({
+//     name:"Sajid 2",
+//     email:"sajddsd@gmail.com",
+//     password:"weysdkfkds636",
+//   })
+// }
+// insert();
 
 //register endpoint starts
 const registerUser = async (req, res) => {
