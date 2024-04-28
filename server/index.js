@@ -25,13 +25,10 @@ app.use(express.urlencoded({ extended: false }))
 
 app.use('/', require('./routes/authRoutes'));
 app.use('/', require('./routes/jobRoutes'));
+app.use('/', require('./routes/eventRoutes'));
 
 
 const port = 7000;
 app.listen(port, (req, res) => {
     console.log(`Server is running on port : ${port}`)
 })
-
-
-
-

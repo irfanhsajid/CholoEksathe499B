@@ -10,7 +10,7 @@ const { jobtest, createJobs, viewJobs, deleteJob, updateJob, getJob } = require(
 router.use(
     cors({
         credentials: true,
-        origin: "http://localhost:5173",
+        origin: "http://localhost:3000",
         // origin: "https://techforing-job-portal.vercel.app",
 
 

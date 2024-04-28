@@ -20,6 +20,6 @@ const jobSchema = new mongoose.Schema({
 });
 
 // Create models based on the schemas
-const JobsModel = mongoose.model('Jobs', jobSchema);
+const JobsModel = mongoose.model('Job', jobSchema);
 
 module.exports = JobsModel;
