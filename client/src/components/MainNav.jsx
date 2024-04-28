@@ -15,27 +15,26 @@ const buttonStyle = {
   marginRight: '10px'
 };
 
-const Navbar = () => {
+const MainNav = () => {
   const { user, logout } = useContext(UserContext)
   const navigate = useNavigate();
 
   const handleLogout = async () => {
     logout();
-    navigate('/home');
+    navigate('/');
   }
 
   //console.log(user);
   return (
-    <div className="text-primary py-4 sticky top-0">
+    <div className="text-primary py-4 sticky top-0 z-10 bg-white backdrop-filter backdrop-blur-lg bg-opacity-30 ">
       <nav className="flex items-center justify-between px-4" >
-        <p className="font-semibold text-primary text-[2rem]">CholoEksathe</p>
+        <p className="font-semibold text-primary text-[2rem]">CholFiri...</p>
         <ul className="px-1 py-1 flex justify-center items-center gap-10 ">
           {navItems.map((data, index) => (
             <li key={index} className="hover:border-b-2 hover:border-secondary hover:-translate-y-1 border-b-2 border-transparent  py-1 transition-all">
               <Link to={data?.link}> {data.name}  </Link>
             </li>
           ))}
-
         </ul>
         {
           !user && (
@@ -53,14 +52,12 @@ const Navbar = () => {
             }} onClick={handleLogout}>Logout<CiLogout className="text-white text-xl font-bold" /> </button>
           </div>
         }
-
-
       </nav>
     </div>
   );
 };
 
-export default Navbar;
+export default MainNav;
 
 const navItems = [
   {

@@ -6,6 +6,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AllRoutes from './routes';
 import Footer from './shared/Footer';
+import EventContextProvider from './context/EventContext';
 //cors policy setup
 // axios.defaults.baseURL = 'https://auth-skeleton-api.vercel.app';
 axios.defaults.baseURL = 'http://localhost:7000';
@@ -28,7 +29,9 @@ function App() {
           pauseOnHover
           theme="light"
           transition:Bounce />
-        <AllRoutes />
+        <EventContextProvider>
+          <AllRoutes />
+        </EventContextProvider>
         <Footer />
       </UserContextProvider>
     </>

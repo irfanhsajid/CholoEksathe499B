@@ -1,17 +1,17 @@
 import { Fragment } from "react";
 import bgImg from "../assets/images/Home/bg-img.png"
-import Navbar from "../components/Navbar";
 import { FaQuoteLeft } from "react-icons/fa6";
 import { FaQuoteRight } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { SiWpexplorer } from "react-icons/si";
+
 const HeroSection = () => {
     // const { user } = useContext(UserContext);
     // console.log(user, "User Data");
     return (
         <Fragment>
-            <div className="w-full h-[100vh] bg-cover bg-top bg-no-repeat overflow-hidden" style={{ backgroundImage: `url(${bgImg})` }}>
-                <Navbar />
+            <div className="w-full  -mt-[50px] h-[100vh] bg-cover bg-top bg-no-repeat overflow-hidden" style={{ backgroundImage: `url(${bgImg})` }}>
+               {/* <MainNav/> */}
                 <div className="text-center flex items-center justify-center flex-col h-[80vh] gap-7 w-full">
                     <h2 className="text-[2.5rem] font-bold text-[#532A79] overflow-y-hidden ">Reunion Event Management Platform</h2>
                     <p className="-mt-3">
