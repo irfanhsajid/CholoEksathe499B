@@ -73,11 +73,17 @@ const navItems = [
   },
   {
     id: 3,
+    name: 'Venues',
+    link: '/venues',
+
+  },
+  {
+    id: 4,
     name: 'Contact Us',
     link: '/contact'
   },
   {
-    id: 4,
+    id: 5,
     name: 'Dashboard',
     link: '/dashboard'
 

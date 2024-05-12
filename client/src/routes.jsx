@@ -12,6 +12,9 @@ import { Fragment } from "react";
 import Home from "./pages/Home";
 import Events from "./pages/Events";
 import EventDetails from "./pages/EventDetails";
+import AllVenues from "./pages/AllVenues";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import VenueList from "./pages/Admin/VenueList";
 
 const AllRoutes = () => {
 
@@ -25,12 +28,15 @@ const AllRoutes = () => {
             <Route path='/createjobs' element={<CreateJob />} />
             <Route path='/managejobs' element={<ManageJobs />} />
             <Route path='/editjobs/:_id' element={<EditJobs />} /> */}
+          <Route path='/dashboard' element={<Dashboard />} />
+          <Route path='/venueList' element={<VenueList />} />
           <Route path='/createjobs' element={<CreateJob />} />
           <Route path='/eventDetails/:_id/' element={<EventDetails />} />
         </Route>
         <Route path='/' element={<Home />} />
         <Route path='/home' element={<Home />} />
         <Route path='/events' element={<Events />} />
+        <Route path='/venues' element={<AllVenues />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
       </Routes>

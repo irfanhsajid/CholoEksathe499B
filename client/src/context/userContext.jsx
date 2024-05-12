@@ -31,7 +31,7 @@ export function UserContextProvider({ children }) {
   useEffect(() => {
     if (!user) {
       const token = getCookie("token");
-      console.log(token, "<---TOKEN")
+     // console.log(token, "<---TOKEN")
       if (token) {
         profileDataRetrive(token)
       }
