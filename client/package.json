@@ -13,6 +13,8 @@
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.15.11",
+    "@tsparticles/all": "^3.4.0",
+    "@tsparticles/react": "^3.0.0",
     "axios": "^1.6.8",
     "keep-react": "^1.2.0",
     "phosphor-react": "^1.4.1",

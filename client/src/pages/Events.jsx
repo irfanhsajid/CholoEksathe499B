@@ -15,7 +15,8 @@ const Events = () => {
     return (
         <main className="min-h-screen">
             <MainNav />
-            <section className="grid grid-cols-1 md:grid-cols-3 gap-10 justify-items-center">
+            <section className="grid grid-cols-1 md:grid-cols-3 gap-10 justify-items-center"
+               >
                 {
                     allEvents?.map((data, index) => (
                         <div key={index}>
@@ -26,9 +27,9 @@ const Events = () => {
                                     {data.short_desc}
                                 </p>
                             </div>
-                          <Link to={`/eventDetails/${data._id}/`}>
-                          <button className="actionBtn !bg-primary">Join Event</button></Link>
-                    
+                            <Link to={`/eventDetails/${data._id}/`}>
+                                <button className="actionBtn !bg-primary">Join Event</button></Link>
+
                         </div>
                     ))
                 }

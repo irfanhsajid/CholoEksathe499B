@@ -1,12 +1,17 @@
-import HeroSection from "../components/HeroSection";
+
 import MainNav from "../components/MainNav";
+import MyParticles from "../components/Particles";
+import AllVenues from "./AllVenues";
+// import MyParticles from "../components/Particles";
 import FeatureImgCard from "./FeatureCard/FeatureImage";
 const Home = () => {
     return (
         <div>
-        <MainNav/>
-        <HeroSection/>
-        <FeatureImgCard/>
+            <MainNav />
+            {/* <HeroSection /> */}
+            <MyParticles/>
+            <FeatureImgCard />
+            <AllVenues/>
         </div>
     );
 };

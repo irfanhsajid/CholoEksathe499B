@@ -1,6 +1,5 @@
 
 import axios from 'axios'
-
 import { UserContextProvider } from './context/userContext'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -30,11 +29,9 @@ function App() {
           pauseOnHover
           theme="light"
           transition:Bounce />
+          
         <EventContextProvider>
-      
           <AllRoutes />
-         
-    
         </EventContextProvider>
         <Footer />
       </UserContextProvider>

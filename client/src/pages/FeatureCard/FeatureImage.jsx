@@ -10,7 +10,7 @@ import SectionHead from '../../components/SectionHead';
 
 const FeatureImgCard = () => {
     return (
-        <div className="my-5">
+        <div >
        <SectionHead
        title='Embrace Your Memories'
        description='All the events are amazing.! We Provide the best quality of Event packages. Definitely, You will be pleased with our services. Just Drop a call for any package Booking. Feel Free to have a event with CholoEksathe'
@@ -23,7 +23,10 @@ const FeatureImgCard = () => {
                 <div className="place-card">
                     <img src={img1} alt="" className="w-full" />
                 </div>
-                <div className="place-card">
+                <div className="place-card" 
+        data-aos="flip-right"
+        data-aos-easing="linear"
+        data-aos-duration="500">
                     <div className="mt-3 ms-3 p-3">
                         <p>Best Reunion <span className="text-lg font-bold">Experience</span><br />
                             <span className="text-red-500">Been reunited recently?</span></p>

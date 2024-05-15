@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
 @import "keep-react/css";
 @tailwind base;
 @tailwind components;
@@ -54,4 +55,21 @@ h1 {
 #map-location iframe{
   width: 100%;
   height: 600px;
+}
+
+#tsparticles{
+  z-index: 1;
+  width: 100%;
+  height: 600px;
+  /* position: relative; */
+  position: absolute;
+}
+
+.heroSection{
+  background: linear-gradient(90deg, var(--primary), rgba(90,9,121,1) 38%, var(--secondary) 100%);
+}
+.dancing-font{
+  font-family: "Dancing Script", 'cursive';
+  /* font-weight: 500; */
+
 }

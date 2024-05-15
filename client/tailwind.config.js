@@ -15,6 +15,9 @@ export default {
         secondary:"hsl(var(--secondary))",
         themeForeground: "hsl(var(--themeForeground))",
        
+      },
+      fontFamily:{
+        dancing:['Dancing Script']
       }
     },
 

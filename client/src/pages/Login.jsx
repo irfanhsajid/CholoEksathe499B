@@ -51,7 +51,6 @@ const Login = () => {
             data-aos-easing="linear"
             data-aos-duration="300"
             className={styles.container}>
-
             <h1 style={{ textAlign: 'center', fontSize: '1.3rem', marginTop: '20px' }}>
                 Assalamu Alaikum <span style={{ color: '#C12048' }}>*,*</span>
             </h1>
