@@ -39,6 +39,11 @@ export const userNav = [
    
 ]
 
+export const headers={
+  
+  "content-type":"application/JSON"
+}
+
 export const particlesConfig={
         autoPlay: true,
         background: {

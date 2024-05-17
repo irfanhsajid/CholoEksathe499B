@@ -12,6 +12,8 @@ mongoose.connect(process.env.MONGO_URL)
     .then(() => console.log('Database is Connected.'))
     .catch((err) => console.log('Database Connection Problem!!', err))
 
+
+
 //middleware to purse the date
 app.use(express.json())
 
@@ -26,7 +28,8 @@ app.use(express.urlencoded({ extended: false }))
 app.use('/', require('./routes/authRoutes'));
 app.use('/', require('./routes/jobRoutes'));
 app.use('/', require('./routes/eventRoutes'));
-
+// app.use('/', require('./routes/sslCommerzInitialSetup'));
+app.use('/', require('./routes/paymentRoute'));
 
 const port = 7000;
 app.listen(port, (req, res) => {

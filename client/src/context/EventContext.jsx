@@ -10,6 +10,7 @@ const EventContextProvider = ({ children }) => {
     const [isLoading, setIsLoading] = useState(false)
     const [allEvents, setAllEvents] = useState();
     const [eventDetails, setEventDetails] = useState();
+    const [paymentDetails, setPaymentDetails] = useState();
     // Get all the events
     const getAllEvents = async () => {
         setIsLoading(true)
@@ -32,14 +33,26 @@ const EventContextProvider = ({ children }) => {
         }
     }
 
+    const getPaymentDetails=async(id)=>{
+        setIsLoading(true);
+        try {
+            const res = await axios.get('/payment/details/' +id);
+            setPaymentDetails(res.data)
+        } catch (error) {
+            toast.error("Error Fetching Data", error)
+        }
+    }
+
     return (
         <EventContext.Provider value={
             {
                 isLoading,
                 allEvents,
                 eventDetails,
+                paymentDetails,
                 getAllEvents,
-                getEventDetails
+                getEventDetails,
+                getPaymentDetails
             }
         }>
             {children}

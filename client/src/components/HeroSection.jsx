@@ -27,7 +27,7 @@ const HeroSection = () => {
                         </p>
                         <FaQuoteRight className="text-secondary text-2xl" />
                     </div>
-                    <Link to={'/events'} className="flex items-center justify-center mt-4"> <button className="flex items-center justify-center w-[220px] gap-2 mx-auto actionBtn z-10 absolute animate-bounce hover:animate-none transition-all !bg-secondary !text-white shadow-lg"> <SiWpexplorer className="text-xl !text-white" /> Explore All Events</button></Link>
+                    <Link to={'/events'} className="flex items-center justify-center mt-8"> <button className="flex items-center justify-center w-[220px] gap-2 mx-auto actionBtn z-10 absolute animate-bounce hover:animate-none transition-all !bg-secondary !text-white shadow-lg"> <SiWpexplorer className="text-xl !text-white" /> Explore All Events</button></Link>
                 </div>
             </div>
         </Fragment>

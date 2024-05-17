@@ -15,12 +15,12 @@ export function UserContextProvider({ children }) {
 
   // get user data profile
   const profileDataRetrive = async (token) => {
-    console.log('Fetching user data...', token);
+    // console.log('Fetching user data...', token);
     try {
       const response = await axios.get('/profile' + "?token=" + token)
       if (response.status === 200) {
-        console.log(response.data.user)
-        setUser(response.data.user);
+        // console.log(response.data.user)
+        setUser(response?.data.user);
         setIsLoading(false)
       }
     } catch (error) {

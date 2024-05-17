@@ -50,7 +50,7 @@ const getSingleEvent = async (req, res) => {
     try {
         // Extract event ID from the request parameters
         const eventId = req.params._id;
-        console.log("Event Id", eventId);
+        // console.log("Event Id", eventId);
         // Find the event in the database by its ID
         const event = await Event.findById(eventId);
 

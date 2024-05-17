@@ -1,7 +1,7 @@
 
 import MainNav from "../components/MainNav";
 import MyParticles from "../components/Particles";
-import AllVenues from "./AllVenues";
+
 // import MyParticles from "../components/Particles";
 import FeatureImgCard from "./FeatureCard/FeatureImage";
 const Home = () => {
@@ -11,7 +11,7 @@ const Home = () => {
             {/* <HeroSection /> */}
             <MyParticles/>
             <FeatureImgCard />
-            <AllVenues/>
+            {/* <AllVenues/> */}
         </div>
     );
 };

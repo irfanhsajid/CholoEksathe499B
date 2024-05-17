@@ -18,6 +18,7 @@ import MyEvents from "./pages/User/MyEvents";
 import NotFound from "./shared/NotFound";
 import EventsList from "./pages/Admin/EventsList";
 import PaymentList from "./pages/Admin/PaymentList";
+import PaymentSuccess from "./pages/PaymentSuccess";
 
 const AllRoutes = () => {
   const { user } = useContext(UserContext)
@@ -37,10 +38,11 @@ const AllRoutes = () => {
             user?.name !== "admin" && <Route element={<Layout data={userNav} />}>
               <Route path='/dashboard' element={<Dashboard />} />
               <Route path='/myEvents' element={<MyEvents />} />
+              <Route path='/success/:id' element={<PaymentSuccess />} />
             </Route>
           }
           <Route path='/createjobs' element={<CreateJob />} />
-          <Route path='/eventDetails/:_id/' element={<EventDetails />} />
+          <Route path='/eventDetails/:id/' element={<EventDetails />} />
         </Route>
         <Route path='/' element={<Home />} />
         <Route path='/home' element={<Home />} />
