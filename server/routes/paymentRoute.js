@@ -23,4 +23,8 @@ router.post('/validate', paymentController.validatePayment);
 // Fetch order by transaction ID
 router.get('/payment/details/:tran_id', paymentController.getPaymentDetails);
 
+//get any users payment history and event info 
+
+router.get('/user/event/:email', paymentController.getUserEventByEmail)
+
 module.exports = router;

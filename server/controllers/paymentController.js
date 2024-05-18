@@ -139,6 +139,23 @@ const validatePayment = async (req, res) => {
 };
 
 
+// 
+const getUserEventByEmail = async (req, res) => {
+    try {
+      const email = req.params.email;
+      const payments = await Payment.find({ cus_email: email });
+  
+      if (payments.length > 0) {
+        res.status(200).json(payments);
+      } else {
+        res.status(404).send("No payments found for this email");
+      }
+    } catch (error) {
+      console.error('Error fetching user events by email:', error);
+      res.status(500).send('Internal Server Error');
+    }
+  }
+
 const ipn = (req, res) => {
     console.log(req.body);
     res.send(req.body);
@@ -151,5 +168,6 @@ module.exports = {
     cancelledPayment,
     validatePayment,
     getPaymentDetails,
-    ipn
+    getUserEventByEmail,
+    ipn,
 };
