@@ -58,7 +58,6 @@ const MainNav = () => {
 };
 
 export default MainNav;
-
 const navItems = [
   {
     id: 1,

@@ -13,15 +13,17 @@ const EventContextProvider = ({ children }) => {
     const [paymentDetails, setPaymentDetails] = useState();
     // Get all the events
     const getAllEvents = async () => {
-        setIsLoading(true)
+        setIsLoading(true);
         try {
-            const res = await axios.get('/all/events');
-            setAllEvents(res.data)
-            setIsLoading(false)
+          const res = await axios.get('/all/events');
+          setAllEvents(res.data);
         } catch (error) {
-            console.log("error", error);
+          console.log("error", error);
+          toast.error("Error fetching events");
+        } finally {
+          setIsLoading(false);
         }
-    };
+      };
 
     const getEventDetails=async(id)=>{
         setIsLoading(true);
@@ -30,6 +32,8 @@ const EventContextProvider = ({ children }) => {
             setEventDetails(res.data)
         } catch (error) {
             toast.error("Error Fetching Data", error)
+        }finally{
+            setIsLoading(false)
         }
     }
 
@@ -40,6 +44,9 @@ const EventContextProvider = ({ children }) => {
             setPaymentDetails(res.data)
         } catch (error) {
             toast.error("Error Fetching Data", error)
+        }
+        finally{
+            setIsLoading(false)
         }
     }
 

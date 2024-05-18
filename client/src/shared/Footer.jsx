@@ -14,8 +14,8 @@ const Footer = () => {
                         <div className="border-b border-secondary w-20 mt-2"></div>
                         <p className="text-sm text-gray-300 mt-2">We the CholoEksathe people offer the best quality of services having top most professional experiences. Youll feel awesome with us In Sha Allah! *,*</p>
                         <div className="flex flex-col gap-2 mt-3">
-                            <p className="text-sm font-light flex-icon"><MdLocalPhone className='text-xl text-secondary' key={1}/>1-677-124-44227</p>
-                            <p className="text-sm font-light flex-icon"><FaStreetView className='text-xl text-secondary' key={2}/>184 Main Collins Street</p>
+                            <p className="text-sm font-light flex-icon"><MdLocalPhone className='text-xl text-secondary' key={1}/>015-677-12427</p>
+                            <p className="text-sm font-light flex-icon"><FaStreetView className='text-xl text-secondary' key={2}/>184/ka, #4, kuril, Dhaka</p>
                             <p className="text-sm font-light flex-icon"><MdEmail className='text-xl text-secondary' key={3}/>info@CholoEksathe.com</p>
                         </div>
                     </div>
