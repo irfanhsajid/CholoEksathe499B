@@ -7,6 +7,7 @@ import { useContext, useEffect } from "react";
 const PaymentSuccess = () => {
     const { id } = useParams();
     const { loading, paymentDetails, getPaymentDetails } = useContext(EventContext);
+   
 
     useEffect(() => {
         getPaymentDetails(id)
