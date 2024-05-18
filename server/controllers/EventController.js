@@ -68,7 +68,22 @@ const getSingleEvent = async (req, res) => {
     }
 };
 
+const getEventByName = async (req, res) => {
+    try {
+        const eventName = req.query.name;
+        // console.log("Event Name", eventName);
+        const event = await Event.find({name: eventName});
 
+        if (event) {
+            res.status(200).json(event);
+        } else {
+            res.status(404).json({ error: 'Event not found' });
+        }
+    } catch (error) {
+        console.error('Error fetching event:', error);
+        res.status(500).json({ error: 'Failed to fetch event' });
+    }
+};
 
 const testEvent = (req, res) => {
     res.send(' EVENT Module is working');
@@ -78,4 +93,5 @@ module.exports = {
     getAllEvents,
     getSingleEvent,
     testEvent,
+    getEventByName
 }
