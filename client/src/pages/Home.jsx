@@ -10,6 +10,7 @@ import SectionHead from "../components/SectionHead";
 import FeatureImgCard from "./FeatureCard/FeatureImage";
 import LoadingComponent from "../components/Loading";
 import { EventContext } from "../context/EventContext";
+import FaqComponent from "../components/FaqComponent";
 const Home = () => {
     const { getAllEvents, allEvents, isLoading } = useContext(EventContext)
     useEffect(() => {
@@ -46,7 +47,8 @@ const Home = () => {
                         title="Frequently Asked Questions"
                         description="Got questions? We've got answers! Our FAQ section covers everything you need to know about our events, from schedules and venues to special activities and booking details. Find all the information you need to ensure an unforgettable experience."
                     />
-                    <div className="due">FAQ</div>
+                    <FaqComponent/>
+                    {/* <div className="due">FAQ</div> */}
                 </section>
                 <section>
                 <SectionHead
