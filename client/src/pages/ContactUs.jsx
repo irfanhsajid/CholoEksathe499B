@@ -1,27 +1,38 @@
 import { ValidationError, useForm } from '@formspree/react';
 import { toast } from 'react-toastify';
 import SectionHead from '../components/SectionHead';
-import { useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import MainNav from '../components/MainNav';
 import { MdOutlineMail } from "react-icons/md";
 import GlowingButton from '../components/GlowingButton';
 import { FaFacebook } from "react-icons/fa";
 import { FaWhatsappSquare } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
+import { EventContext } from '../context/EventContext';
+import LoadingComponent from '../components/Loading';
 
 function IrfansContactForm() {
   const [state, handleSubmit] = useForm("xzbopvgy");
+  
 
-  console.log(state.form);
+  const { getAllVenues, allVenues, isLoading } = useContext(EventContext)
+  useEffect(() => {
+      getAllVenues();
+  }, [])
+  console.log( state )
 
   useEffect(() => {
     if (state.succeeded) {
       toast.success("Email Sent Successfully");
       document.getElementById("contact-form").reset()
-
       // Optionally, you can reset the form state here if needed
     }
   }, [state.succeeded]);
+
+  // display loading animation
+  if (isLoading) {
+      return <LoadingComponent />
+  }
 
   return (
     <>
@@ -62,8 +73,14 @@ function IrfansContactForm() {
               <input className="w-full m-2 p-2" id="email" type="email" name="email" placeholder="Your Email" required />
               <ValidationError field="email" prefix="Email" errors={state.errors} />
               <br />
-              <input className="w-full m-2 p-2" id="venueId" type="text" name="venueId" placeholder="Choosen Venue Id: E.g. NSU10B" required />
-              <ValidationError field="venueId" prefix="VenueId" errors={state.errors} />
+             <select name="venue_name" id="" defaultValue="" className='w-full m-2 p-2' required>
+              <option value="" disabled selected> Choose Venue</option>
+              {
+                allVenues?.map((item, index)=>(
+                  <option key={index} value={item?.name}>{item?.name}</option>
+                ))
+              }
+             </select>
               <br />
               <input className="w-full m-2 p-2" id="event-date" type="date" name="event-date" placeholder="Your Preferable Date" required />
               <ValidationError field="event-date" prefix="Date" errors={state.errors} />

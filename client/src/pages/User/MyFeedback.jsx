@@ -25,7 +25,7 @@ function IrfansContactForm() {
     <>
       <div className=" container">
         <SectionHead
-        title='Share Thoughts'
+        title='Share Your Thoughts'
         />
         <div id="contact" className="py-3 flex">
           <div className="w-full">

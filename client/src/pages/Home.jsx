@@ -11,6 +11,7 @@ import FeatureImgCard from "./FeatureCard/FeatureImage";
 import LoadingComponent from "../components/Loading";
 import { EventContext } from "../context/EventContext";
 import FaqComponent from "../components/FaqComponent";
+import EventSchedule from "../components/EventSchedule";
 const Home = () => {
     const { getAllEvents, allEvents, isLoading } = useContext(EventContext)
     useEffect(() => {
@@ -50,19 +51,16 @@ const Home = () => {
                     <FaqComponent/>
                     {/* <div className="due">FAQ</div> */}
                 </section>
-                <section>
-                <SectionHead
-                        title="Contact US"
-                    />
-                    <div className="due">Contact Info Card</div>
+                <section className="mt-10">
+                   <EventSchedule/>
                 </section>
-                <section>
+                {/* <section>
                 <SectionHead
                         title="User Reviews"
                         description="Hear from our attendees! Our User Reviews section features feedback and testimonials from people who have experienced our events. Discover what they loved, what stood out, and why they recommend joining us for an unforgettable experience."
                     />
                     <div className="due">Client Reviews Slider</div>
-                </section>
+                </section> */}
             </div>
         </main>
     );
