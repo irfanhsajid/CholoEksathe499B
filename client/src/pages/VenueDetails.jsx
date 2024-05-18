@@ -7,6 +7,7 @@ import MainNav from "../components/MainNav";
 
 import SectionHead from "../components/SectionHead";
 import LoadingComponent from "../components/Loading";
+import ImageSlider from "../components/ImageSlider";
 
 
 const VenueDetails = () => {
@@ -45,11 +46,15 @@ const VenueDetails = () => {
                             <p> Ticket Price: <span className="text-secondary font-bold ">{venueDetails?.price}</span> TK</p>
                            </div>
                     </div>
-                    <div className="due">More Images Slider Here </div>
+                    <br />
+                    <SectionHead
+                        title={"More Related images"}
+                    />
+                    <div className="flex items-center justify-center p-4 shadow-md rounded-md"> <ImageSlider data={venueDetails?.image}/> </div>
                 </section>
                 <section>
                     <SectionHead
-                        title='Google Map Location'
+                        title='Venue Location On Google Map'
                     />
                     <div id="map-location" className="h-[600px] w-[1200px] mx-auto  shadow-2xl" dangerouslySetInnerHTML={{ __html: venueDetails?.location }}></div>
                 </section>
