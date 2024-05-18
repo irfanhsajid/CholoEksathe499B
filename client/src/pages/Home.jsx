@@ -35,6 +35,13 @@ const Home = () => {
 
                 <section>
                     <SectionHead
+                        title="Find all Exciting Venues"
+                        description="Discover all the exciting details about our upcoming events. Find comprehensive information on schedules, venues, and special activities. Join us for an unforgettable experience filled with fun and memories."
+                    />
+                    <div className="due">venue card showing</div>
+                </section>
+                <section>
+                    <SectionHead
                         title="Event Highlights"
                         description="Discover all the exciting details about our upcoming events. Find comprehensive information on schedules, venues, and special activities. Join us for an unforgettable experience filled with fun and memories."
                     />
