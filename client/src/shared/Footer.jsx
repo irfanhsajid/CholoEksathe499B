@@ -1,48 +1,46 @@
-
+import { Link } from 'react-router-dom';
+import bgImage from '../assets/images/Home/footer-bg.jpg'
+import { MdLocalPhone } from "react-icons/md";
+import { FaStreetView } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
 const Footer = () => {
     return (
-        <div className="bg-purple-900 text-white w-full mt-7 px-6">
-            <div className="container mx-auto py-8">
+        <div className=" text-white w-full mt-7 px-6  bg-cover bg-center absolute" style={{ backgroundImage: `url(${bgImage})` }}>
+            <div className="container mx-auto py-8 relative">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div className="col-span-1">
                         <h4 className="text-lg font-semibold">About Us</h4>
                         <div className="border-b border-secondary w-20 mt-2"></div>
-                        <p className="text-sm text-gray-300 mt-2">We the CholoFiri people offer the best quality of services having top most professional experiences. Youll feel awesome with us In Sha Allah! *,*</p>
-                        <div className="mt-4">
-                            <p className="text-sm font-light"><i className="fas fa-phone-alt me-3 text-secondary"></i>1-677-124-44227</p>
-                            <p className="text-sm font-light"><i className="fas fa-map-marker-alt me-3 text-secondary"></i>184 Main Collins Street</p>
-                            <p className="text-sm font-light"><i className="fas fa-envelope me-3 text-secondary"></i>info@CholoFiri.com</p>
+                        <p className="text-sm text-gray-300 mt-2">We the CholoEksathe people offer the best quality of services having top most professional experiences. Youll feel awesome with us In Sha Allah! *,*</p>
+                        <div className="flex flex-col gap-2 mt-3">
+                            <p className="text-sm font-light flex-icon"><MdLocalPhone className='text-xl text-secondary' key={1}/>1-677-124-44227</p>
+                            <p className="text-sm font-light flex-icon"><FaStreetView className='text-xl text-secondary' key={2}/>184 Main Collins Street</p>
+                            <p className="text-sm font-light flex-icon"><MdEmail className='text-xl text-secondary' key={3}/>info@CholoEksathe.com</p>
                         </div>
                     </div>
                     <div className="col-span-1">
-                        <h4 className="text-lg font-semibold">Latest Posts</h4>
-                        <div className="border-b border-secondary w-20 mt-2"></div>
-                        <div className="mt-2">
-                            <span className="text-sm font-light text-secondary">August 30, 2023</span>
-                            <p className="text-sm font-light mt-1">How To Take Better Photos?</p>
-                        </div>
-                        <div className="mt-2">
-                            <span className="text-sm font-light text-secondary">January 30, 2020</span>
-                            <p className="text-sm font-light mt-1">14 Things To See And Do When Visiting Kyoto</p>
-                        </div>
-                        <div className="mt-2">
-                            <span className="text-sm font-light text-secondary">September 30, 2021</span>
-                            <p className="text-sm font-light mt-1">Backpacking Laos: A Full Travel Guide for You</p>
-                        </div>
-                        <div className="mt-2">
-                            <span className="text-sm font-light text-secondary">December 30, 2021</span>
-                            <p className="text-sm font-light mt-1">Kashmir: The Heavenly Place.</p>
-                        </div>
+                        <h4 className="text-lg font-semibold">Important Links</h4>
+                        <div className="border-b border-secondary w-40 mt-2"></div>
+                        <ul className="p-2">
+                            {footerItems?.map((data, index) => (
+                                <li key={index} className="py-2">
+                                    <Link to={data?.link}> {data.name}  </Link>
+                                </li>
+                            ))}
+                        </ul>
                     </div>
                     <div className="col-span-1">
-                        <h4 className="text-lg font-semibold">Latest Tweets</h4>
-                        <div className="border-b border-secondary w-20 mt-2"></div>
+                        <h4 className="text-lg font-semibold">Latest Reveiws</h4>
+                        <div className="border-b border-secondary w-36 mt-2"></div>
                         <div className="mt-2">
-                            <p className="text-sm font-light text-gray-300"><i className="fab fa-twitter me-2 text-secondary"></i>@alexherder hi @alexherder, we cant recommend anyone specific, but you can find a list of freelancers working with… https://t.co/fs1gMcMOej</p>
-                        </div>
-                        <div className="mt-2">
-                            <p className="text-sm font-light text-gray-300"><i className="fab fa-twitter me-2 text-secondary"></i>@simonrichwright Heres an article to get you started with using our support platform: https://t.co/eiUoQNlHUh Let… https://t.co/PhSMKT4Rph</p>
+                            {
+                                data.map((item, index) => (
+                                    <p key={index} className='text-sm font-light text-gray-300 pb-3'>
+                                        {item.desc}
+                                    </p>
+                                ))
+                            }
                         </div>
                     </div>
                 </div>
@@ -52,3 +50,50 @@ const Footer = () => {
 };
 
 export default Footer;
+
+const footerItems = [
+    {
+        id: 1,
+        name: 'Home',
+        link: '/'
+    },
+    {
+        id: 2,
+        name: 'Events',
+        link: '/events',
+
+    },
+    {
+        id: 3,
+        name: 'Venues',
+        link: '/venues',
+
+    },
+    {
+        id: 4,
+        name: 'Contact Us',
+        link: '/contact'
+    },
+    {
+        id: 5,
+        name: 'Dashboard',
+        link: '/dashboard'
+
+    },
+]
+
+const data = [
+    {
+        id: 1,
+        desc: "@janedoe23 Had a fantastic experience! The event was well-organized and the venue was stunning. Highly recommend! https://t.co/abc1234def"
+    },
+    {
+        id: 2,
+        desc: "@johnsmith78 Our reunion was unforgettable thanks to you! Excellent service and attention to detail. Will definitely book again. https://t.co/ghi5678jkl"
+    },
+    {
+        id: 3,
+        desc: "@emilybrown42 Amazing platform! Easily found and booked the perfect venue for our event. Everything went smoothly. Thank you! https://t.co/mno9012pqr"
+    }
+]
+
