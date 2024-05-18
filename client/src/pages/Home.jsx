@@ -46,7 +46,7 @@ const Home = () => {
                         title="Frequently Asked Questions"
                         description="Got questions? We've got answers! Our FAQ section covers everything you need to know about our events, from schedules and venues to special activities and booking details. Find all the information you need to ensure an unforgettable experience."
                     />
-                    <div className="due"> FAQ</div>
+                    <div className="due">FAQ</div>
                 </section>
                 <section>
                 <SectionHead

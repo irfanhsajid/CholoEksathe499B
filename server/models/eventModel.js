@@ -44,7 +44,12 @@ const eventSchema = new mongoose.Schema({
     access_token: {
         type: String,
         required: true
-    }
+    },
+    category: {
+        type: String,
+        required: true
+    },
+
 });
 
 const Event = mongoose.model('Event', eventSchema);

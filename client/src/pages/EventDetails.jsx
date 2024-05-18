@@ -54,7 +54,7 @@ const EventDetails = () => {
                 // console.log(res)
                 window.location.replace(res?.data)
             })
-            .catch(err => toast.error(err))
+            .catch(err => toast.error(err?.response.data.message))
     }
     if (isLoading) {
         return <LoadingComponent />

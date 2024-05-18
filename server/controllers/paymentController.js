@@ -3,7 +3,7 @@ const SSLCommerzPayment = require('sslcommerz')
 const { v4: uuidv4 } = require('uuid');
 
 const initiatePayment = async (req, res) => {
-    const { total_amount, product_name, product_image, cus_name, cus_email } = req.body;
+    const { total_amount, product_name, product_image, cus_name, cus_email,access_token } = req.body;
     try {
         const paymentInfo = {
             total_amount: total_amount,
@@ -40,7 +40,8 @@ const initiatePayment = async (req, res) => {
             value_a: 'ref001_A',
             value_b: 'ref002_B',
             value_c: 'ref003_C',
-            value_d: 'ref004_D'
+            value_d: 'ref004_D',
+            access_token:access_token,
         };
         await Payment.create(paymentInfo)
         const sslcommer = new SSLCommerzPayment(process.env.STORE_ID, process.env.STORE_PASSWORD, false) //true for live and default false for sandbox

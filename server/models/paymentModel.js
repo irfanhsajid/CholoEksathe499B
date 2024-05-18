@@ -34,7 +34,9 @@ const paymentSchema = new mongoose.Schema({
     value_a: { type: String },
     value_b: { type: String },
     value_c: { type: String },
-    value_d: { type: String }
+    value_d: { type: String },
+    access_token: { type: String },
+
 });
 
 const Payment = mongoose.model('Payment', paymentSchema);
