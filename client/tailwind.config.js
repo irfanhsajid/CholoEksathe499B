@@ -14,11 +14,10 @@ export default {
         primary: "hsl(var(--primary))",
         secondary:"hsl(var(--secondary))",
         themeForeground: "hsl(var(--themeForeground))",
-       
       },
       fontFamily:{
         dancing:['Dancing Script']
-      }
+      },
     },
 
   },

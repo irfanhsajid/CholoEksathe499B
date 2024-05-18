@@ -4,12 +4,11 @@ const createEvent = async (req, res) => {
     console.log("Req Body", req.body);
     try {
         // Extract event data from the request body
-        const { name, venue, location, price, max_allowed, date, time, going, access_token, short_desc, image } = req.body;
+        const { name, venue, image, location, price, max_allowed, date, time, going, access_token, short_desc} = req.body;
 
         // Create a new event instance
         const newEvent = new Event({
             name,
-            short_desc,
             venue,
             image,
             location,
@@ -18,7 +17,8 @@ const createEvent = async (req, res) => {
             date,
             time,
             going,
-            access_token
+            access_token,
+            short_desc,
         });
 
         // Save the event to the database
