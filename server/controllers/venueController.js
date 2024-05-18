@@ -131,12 +131,33 @@ const testVenue = (req, res) => {
     res.send('Test Venue Controller');
 }
 
+const getVenueByName = async (req, res) => {
+    try {
+        // Extract venue ID from the request parameters
+        const venueName = req.query.name;
+        console.log("Venue Name", venueName);
+        // Find the venue in the database by its ID
+        const venue = await Venue.find({ name: venueName });
+
+        // If the venue is found, send it as a response
+        if (venue) {
+            res.status(200).json(venue);
+        } else {
+            // If the venue is not found, send a 404 Not Found response
+            res.status(404).json({ error: 'Venue not found' });
+        }
+    } catch (error) {
+        res.status(500).send(error.message)
+    }
+}
+
 module.exports = {
     createVenue,
     getAllVenue,
     getVenue,
     updateVenue,
     deleteVenue,
+    getVenueByName,
     testVenue
 };
 

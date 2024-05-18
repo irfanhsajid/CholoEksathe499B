@@ -10,5 +10,6 @@ router.get('/venueGet/:id', venueController.getVenue);
 router.post('/venueCreate', venueController.createVenue);
 router.put('/venueUpdate/:id', venueController.updateVenue);
 router.delete('/venueDelete/:id', venueController.deleteVenue);
+router.get('/venueByName', venueController.getVenueByName);
 
 module.exports = router;
