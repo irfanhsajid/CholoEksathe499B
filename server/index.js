@@ -1,7 +1,6 @@
 
 const express = require('express');
 const { mongoose } = require('mongoose');
-
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const dotenv = require('dotenv').config();
@@ -13,22 +12,19 @@ mongoose.connect(process.env.MONGO_URL)
     .catch((err) => console.log('Database Connection Problem!!', err))
 
 
-
 //middleware to purse the date
 app.use(express.json())
 
 //middlewares for json webtoken
 app.use(cookieParser())
 
-/* a middleware that parses
-incoming requests with URL-encoded payloads. */
+/* a middleware that parses incoming requests with URL-encoded payloads. */
 app.use(express.urlencoded({ extended: false }))
 
 app.use(cors({
     credentials: true,
     origin: "http://localhost:3000", // or "https://techforing-job-portal.vercel.app"
 }));
-
 
 app.use('/', require('./routes/authRoutes'));
 app.use('/', require('./routes/jobRoutes'));

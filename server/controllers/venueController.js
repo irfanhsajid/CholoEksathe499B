@@ -4,16 +4,19 @@ const Venue = require('../models/venueModel');
 const createVenue = async (req, res) => {
     try {
         // Extract venue data from the request body
-        const { name, location, short_desc ,maximum_capacity, price, image } = req.body;
+        const { venue_Id, name, location, short_desc ,maximum_capacity, price, image, featured_image, status } = req.body;
 
         // Create a new venue instance
         const newVenue = new Venue({
+            venue_Id,
             name,
             location,
             short_desc,
             maximum_capacity,
             price,
             image,
+            featured_image,
+            status
         });
 
         const savedVenue = await newVenue.save();
@@ -57,7 +60,7 @@ const getVenue = async (req, res) => {
 //Update venue function
 const updateVenue = async (req, res) => {
     try {
-        const { name, location, price, max_allowed, access_token, short_desc, image } = req.body;
+        const { name, location, short_desc ,maximum_capacity, price, image, featured_image, status } = req.body;
 
         const venueId = req.params.id;
 
@@ -66,11 +69,12 @@ const updateVenue = async (req, res) => {
         if (venue) {
             venue.name = name;
             venue.location = location;
-            venue.price = price;
-            venue.max_allowed = max_allowed;
-            venue.access_token = access_token;
             venue.short_desc = short_desc;
+            venue.maximum_capacity = maximum_capacity;
+            venue.price = price;
             venue.image = image;
+            venue.featured_image = featured_image;
+            venue.status = status;
 
             const updatedVenue = await venue.save();
 

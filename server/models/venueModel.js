@@ -1,6 +1,11 @@
 const mongoose = require('mongoose');
 
 const venueSchema = new mongoose.Schema({
+    venue_Id: {
+        type: Number,
+        required: true,
+        unique: true
+    },
     name: {
         type: String,
         required: true,
@@ -25,6 +30,14 @@ const venueSchema = new mongoose.Schema({
     image: {
         type: [String],
         required: false
+    },
+    featured_image:{
+        type: String,
+        required: false
+    },
+    status: {
+        type: Boolean,
+        required: true
     }
 });
 
