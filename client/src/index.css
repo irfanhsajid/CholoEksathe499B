@@ -24,7 +24,7 @@
   --themeForeground:  0 0% 100%;
 }
 @layer base {
-  input {
+  input,textarea {
     @apply border border-primary p-3 rounded-md;
   }
 

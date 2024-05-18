@@ -19,6 +19,7 @@ import NotFound from "./shared/NotFound";
 import EventsList from "./pages/Admin/EventsList";
 import PaymentList from "./pages/Admin/PaymentList";
 import PaymentSuccess from "./pages/PaymentSuccess";
+import Contact from "./pages/ContactUs";
 
 const AllRoutes = () => {
   const { user } = useContext(UserContext)
@@ -50,6 +51,7 @@ const AllRoutes = () => {
         <Route path='/venues' element={<AllVenues />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
+        <Route path='/contact' element={<Contact />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Fragment>

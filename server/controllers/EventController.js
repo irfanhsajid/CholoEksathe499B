@@ -4,7 +4,7 @@ const createEvent = async (req, res) => {
     console.log("Req Body", req.body);
     try {
         // Extract event data from the request body
-        const { name, venue, location, price, max_allowed, date, time, going, access_token } = req.body;
+        const { name, venue, location, price, max_allowed, date, time, going, access_token, short_desc, image } = req.body;
 
         // Create a new event instance
         const newEvent = new Event({
