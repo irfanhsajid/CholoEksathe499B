@@ -11,12 +11,12 @@ const {
 } = require("../controllers/paymentController");
 
 const router = express.Router();
-
-router.use(cors({
-    credentials: true,
-    origin: "http://localhost:3000",
-    // origin: "https://techforing-job-portal.vercel.app",
-}));
+//
+// router.use(cors({
+//     credentials: true,
+//     origin: "http://localhost:3000",
+//     // origin: "https://techforing-job-portal.vercel.app",
+// }));
 
 router.post('/init', initiatePayment);
 // Payment success, failure, and cancel responses

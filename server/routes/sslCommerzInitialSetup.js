@@ -4,13 +4,13 @@ const SSLCommerzPayment = require('sslcommerz')
 
 const router=express.Router();
 
-router.use(
-    cors({
-        credentials: true,
-        origin: "http://localhost:3000",
-        // origin: "https://techforing-job-portal.vercel.app",
-    })
-)
+// router.use(
+//     cors({
+//         credentials: true,
+//         origin: "http://localhost:3000",
+//         // origin: "https://techforing-job-portal.vercel.app",
+//     })
+// )
 //sslcommerz init
 router.get('/init', (req, res) => {
     const data = {

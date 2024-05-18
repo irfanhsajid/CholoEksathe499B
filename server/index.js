@@ -24,12 +24,18 @@ app.use(cookieParser())
 incoming requests with URL-encoded payloads. */
 app.use(express.urlencoded({ extended: false }))
 
+app.use(cors({
+    credentials: true,
+    origin: "http://localhost:3000", // or "https://techforing-job-portal.vercel.app"
+}));
+
 
 app.use('/', require('./routes/authRoutes'));
 app.use('/', require('./routes/jobRoutes'));
 app.use('/', require('./routes/eventRoutes'));
 // app.use('/', require('./routes/sslCommerzInitialSetup'));
 app.use('/', require('./routes/paymentRoute'));
+app.use('/', require('./routes/venueRoute'));
 
 const port = 7000;
 app.listen(port, (req, res) => {

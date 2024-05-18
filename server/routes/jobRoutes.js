@@ -7,15 +7,15 @@ const router = express.Router();
 const { jobtest, createJobs, viewJobs, deleteJob, updateJob, getJob } = require('../controllers/jobController');
 
 
-router.use(
-    cors({
-        credentials: true,
-        origin: "http://localhost:3000",
-        // origin: "https://techforing-job-portal.vercel.app",
-
-
-    })
-)
+// router.use(
+//     cors({
+//         credentials: true,
+//         origin: "http://localhost:3000",
+//         // origin: "https://techforing-job-portal.vercel.app",
+//
+//
+//     })
+// )
 
 router.get('/jobtest', jobtest);
 router.post('/createJobs', createJobs);
