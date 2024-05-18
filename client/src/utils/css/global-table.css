@@ -1,0 +1,75 @@
+/* General Styles */
+.global-table {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: auto;
+}
+
+/* Title Styles */
+.global-table .title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    padding: 1rem;
+    color: #EC3282;
+    text-align: center;
+}
+
+/* Header Styles */
+.global-table .header {
+    background-color: #1c0a2de0 ;
+    color: white;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    display: flex;
+}
+
+.global-table .header .column {
+    font-weight: bold;
+    padding: 0.25rem;
+
+}
+
+/* Row Styles */
+.global-table .row {
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem 1rem;
+    font-size: 10px;
+}
+
+.global-table .row:hover {
+    background-color: #f5f5f5;
+    cursor: pointer;
+}
+
+.global-table .row .cell {
+    padding: 0.25rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .global-table .header .column {
+        display: none;
+    }
+
+    .global-table .row {
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid #ddd;
+        padding: 0.5rem;
+    }
+
+    .global-table .row .cell {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.25rem 0;
+    }
+
+    .global-table .row .cell:before {
+        content: attr(data-label);
+        font-weight: bold;
+        margin-right: 0.5rem;
+    }
+}

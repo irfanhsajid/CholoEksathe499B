@@ -96,5 +96,5 @@ h1 {
   @apply flex items-center gap-2
 }
 .due{
-  @apply p-2 bg-secondary w-full text-white text-center
+  @apply p-2 bg-secondary w-full text-white text-center my-6
 }

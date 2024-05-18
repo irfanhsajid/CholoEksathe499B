@@ -36,6 +36,8 @@ const paymentSchema = new mongoose.Schema({
     value_c: { type: String },
     value_d: { type: String },
     access_token: { type: String },
+    event_date:{ type: String },
+    event_image: { type: String },
 
 });
 

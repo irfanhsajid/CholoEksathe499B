@@ -42,11 +42,12 @@ const EventDetails = () => {
         const payload = {
             product_name: eventDetails?.name,
             product_profile: eventDetails?.description,
-            product_image: eventDetails?.imageURL,
+            event_image: eventDetails?.imageURL,
             total_amount: eventDetails?.price,
             cus_name: user?.name,
             cus_email: user?.email,
-            access_token: data.token
+            access_token: data?.token,
+            event_date:eventDetails?.date,
         }
         console.log(headers);
         await axios.post('/init', payload)

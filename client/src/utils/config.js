@@ -30,9 +30,21 @@ export const userNav = [
         link: '/dashboard'
     },
     {
-        id: 3,
+        id: 2,
         name: 'My Events',
         link: '/myEvents'
+
+    },
+    {
+        id: 3,
+        name: 'Chat',
+        link: '/myChat'
+
+    },
+    {
+        id: 3,
+        name: 'Feedback',
+        link: '/myFeedback'
 
     },
   
