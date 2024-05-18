@@ -26,7 +26,7 @@ const EventCards = ({eventsData}) => {
 };
 
 EventCards.propTypes={
-    eventsData: PropTypes.array.isRequired
+    eventsData: PropTypes.any
 }
 
 export default EventCards;
