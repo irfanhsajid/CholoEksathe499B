@@ -9,12 +9,23 @@ const venueSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    short_desc: {
+        type: String,
+        required: true
+    },
     maximum_capacity: {
         type: Number,
         required: true
     },
+    price: {
+        type: Number,
+        required: true
+    },
     image: {
-        type: Array,
+        type: [String],
         required: false
     }
 });
+
+const Venue = mongoose.model('Venue', venueSchema);
+module.exports = Venue;

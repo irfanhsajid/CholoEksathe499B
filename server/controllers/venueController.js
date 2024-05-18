@@ -4,17 +4,16 @@ const Venue = require('../models/venueModel');
 const createVenue = async (req, res) => {
     try {
         // Extract venue data from the request body
-        const { name, location, price, max_allowed, access_token, short_desc, image } = req.body;
+        const { name, location, short_desc ,maximum_capacity, price, image } = req.body;
 
         // Create a new venue instance
         const newVenue = new Venue({
             name,
-            short_desc,
-            image,
             location,
+            short_desc,
+            maximum_capacity,
             price,
-            max_allowed,
-            access_token
+            image,
         });
 
         // Save the venue to the database
@@ -45,8 +44,8 @@ const getAllVenue = async (req, res) => {
 const getVenue = async (req, res) => {
     try {
         // Extract venue ID from the request parameters
-        const venueId = req.params._id;
-        // console.log("Venue Id", venueId);
+        const venueId = req.params.id;
+        console.log("Venue Id", venueId);
         // Find the venue in the database by its ID
         const venue = await Venue.findById(venueId);
 
@@ -69,7 +68,7 @@ const updateVenue = async (req, res) => {
         const { name, location, price, max_allowed, access_token, short_desc, image } = req.body;
 
         // Extract venue ID from the request parameters
-        const venueId = req.params._id;
+        const venueId = req.params.id;
 
         // Find the venue in the database by its ID
         const venue = await Venue.findById(venueId);
@@ -106,14 +105,14 @@ const updateVenue = async (req, res) => {
 const deleteVenue = async (req, res) => {
     try {
         // Extract venue ID from the request parameters
-        const venueId = req.params._id;
+        const venueId = req.params.id;
 
         // Find the venue in the database by its ID
         const venue = await Venue.findById(venueId);
 
         // If the venue is found, delete it
         if (venue) {
-            await venue.remove();
+            await Venue.deleteOne({ _id: venueId });
 
             // Send a success response
             res.status(200).json({ message: 'Venue deleted successfully' });
@@ -128,11 +127,16 @@ const deleteVenue = async (req, res) => {
     }
 };
 
+const testVenue = (req, res) => {
+    res.send('Test Venue Controller');
+}
+
 module.exports = {
     createVenue,
     getAllVenue,
     getVenue,
     updateVenue,
-    deleteVenue
+    deleteVenue,
+    testVenue
 };
 
