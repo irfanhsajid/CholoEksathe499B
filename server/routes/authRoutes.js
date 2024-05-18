@@ -4,10 +4,7 @@ const cors = require('cors');
 
 const router = express.Router();
 
-
 const authController = require('../controllers/authController')
-
-
 
 router.get('/', authController.test)
 router.get('/users', authController.getUsers); //for user testcase
