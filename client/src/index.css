@@ -68,7 +68,7 @@ h1 {
   @apply text-[28px] text-primary
 }
 .container{
-  @apply px-4
+  @apply px-10
 }
 /* Custom Height Width Set For Map */
 #map-location iframe{
@@ -91,4 +91,7 @@ h1 {
   font-family: "Dancing Script", 'cursive';
   /* font-weight: 500; */
 
+}
+.flex-icon{
+  @apply flex items-center gap-2
 }

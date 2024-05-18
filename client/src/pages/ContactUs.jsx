@@ -3,60 +3,79 @@ import { toast } from 'react-toastify';
 import SectionHead from '../components/SectionHead';
 import { useEffect } from 'react';
 import MainNav from '../components/MainNav';
+import { MdOutlineMail } from "react-icons/md";
+import GlowingButton from '../components/GlowingButton';
+import { FaFacebook } from "react-icons/fa";
+import { FaWhatsappSquare } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
 
 function IrfansContactForm() {
-  const [state, handleSubmit, reset] = useForm("xzbopvgy");
+  const [state, handleSubmit] = useForm("xzbopvgy");
 
-  console.log(reset);
+  console.log(state.form);
 
   useEffect(() => {
     if (state.succeeded) {
       toast.success("Email Sent Successfully");
+      document.getElementById("contact-form").reset()
+
       // Optionally, you can reset the form state here if needed
     }
   }, [state.succeeded]);
 
   return (
     <>
-  <MainNav/>
-    <div className="container">
-      <SectionHead title='CONNECT US' />
-      <div id="contact" className="py-3 flex">
-        <div className="w-1/2">
-          <div className="contact-text">
-            <h2 className="">About Me</h2>
-            <p className="about-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus animi molestiae sit dolores placeat corporis dolorem quisquam voluptatibus suscipit eligendi recusandae ex odit aliquid, veritatis ipsa exercitationem distinctio ipsum reprehenderit!
-            </p>
-            <p>
-              <a style={{ textDecoration: 'none', color: 'inherit' }} href=" https://www.facebook.com/irfanhsajid " target="_blank"><i className="fab fa-facebook-square mr-1"> </i> Irfan H Sajid</a>
-            </p>
-            <p>
-              <i className="fab fa-whatsapp-square mr-1"></i> +880-1324-392630
-            </p>
-            <p>
-              <i className="fas fa-envelope mr-1"></i> irfanhsajid@gmail.com
-            </p>
+      <MainNav />
+      <div className=" container">
+        <SectionHead title='CONNECT US' />
+        <div id="contact" className="py-3 flex">
+          <div className="w-1/2">
+            <div className="contact-text">
+              <h2 className="font-bold">যোগাযোগঃ</h2>
+              <p className="about-text py-2">
+                আপনারা চাইলে আমাদেরকে সরাসরি এই নাম্বারে কল করেও ইভেন্ট বুকিং করতে পারেন। <br /> অথবা নিচে উল্লেখিত স্যোসাল মিডিয়া একাউন্টেও যোগাযোগ করতে পারেন। <br />
+                অথবা মেইলের মাধ্যমে আপনার পছন্দের ভেন্যু ও অন্যান্য প্রয়োজনীয় তথ্য পূরন করে  রিকুয়েস্ট পাঠান। (recommened)
+              </p>
+              <div className='flex mx-auto justify-start mt-5 ms-[200px]'>
+                <GlowingButton />
+              </div>
+              <div className='flex gap-8 mt-5 justify-center me-[10rem] '>
+                <p className='flex-icon'>
+                  <FaFacebook className='text-secondary'/> Facebook
+                </p>
+                <p className='flex-icon'>
+                  <FaWhatsappSquare className='text-secondary'/> WhatsApp
+                </p>
+                <p className='flex-icon'>
+                 <FaTwitter className='text-secondary'/> Twitter
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="w-1/2">
+            <form onSubmit={handleSubmit} className="w-full" id="contact-form">
+              <input className="w-full m-2 p-2" id="name" type="text" name="name" placeholder="Your Name" required />
+              <br />
+              <input className="w-full m-2 p-2" id="contact" type="number" name="contact" placeholder="Contact: E.g. 017-367XXXXX" required />
+              <ValidationError field="contact" prefix="Contact" errors={state.errors} />
+              <br />
+              <input className="w-full m-2 p-2" id="email" type="email" name="email" placeholder="Your Email" required />
+              <ValidationError field="email" prefix="Email" errors={state.errors} />
+              <br />
+              <input className="w-full m-2 p-2" id="venueId" type="text" name="venueId" placeholder="Choosen Venue Id: E.g. NSU10B" required />
+              <ValidationError field="venueId" prefix="VenueId" errors={state.errors} />
+              <br />
+              <input className="w-full m-2 p-2" id="event-date" type="date" name="event-date" placeholder="Your Preferable Date" required />
+              <ValidationError field="event-date" prefix="Date" errors={state.errors} />
+              <br />
+              <textarea className="w-full m-2 p-2" rows="3" id="message" name="message" placeholder="Additional Requirements..." />
+              <button className="w-full actionBtn !bg-secondary border-0 m-2 p-2 rounded" type="submit" disabled={state.submitting}>
+                <span className='flex items-center gap-2 mx-auto justify-center'> <MdOutlineMail className='text-xl' /> SEND EMAIL</span>
+              </button>
+            </form>
           </div>
         </div>
-        <div className="w-1/2">
-          <form onSubmit={handleSubmit} className="w-full">
-            <input className="w-full m-2 p-2" id="name" type="text" name="name" placeholder="Your Name" />
-            <br />
-            <input className="w-full m-2 p-2" id="email" type="email" name="email" placeholder="Your Email" />
-            <ValidationError field="email" prefix="Email" errors={state.errors} />
-            <br />
-            <textarea className="w-full m-2 p-2" rows="5" id="message" name="message" placeholder="Message..." />
-            <button className="w-full actionBtn !bg-secondary border-0 m-2 p-2 rounded" type="submit" disabled={state.submitting}>
-              <i className="fas fa-paper-plane hvr-icon mr-2"></i> SEND EMAIL
-            </button>
-            <button onClick={() => reset()} className="w-full actionBtn !bg-secondary border-0 m-2 p-2 rounded" type="button" disabled={state.submitting}>
-              Testing Toaster
-            </button>
-          </form>
-        </div>
       </div>
-    </div>
     </>
   );
 }
