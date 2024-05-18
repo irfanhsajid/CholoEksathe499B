@@ -4,7 +4,7 @@ const express = require('express');
 const cors = require('cors');
 
 const router = express.Router();
-const {testEvent,createEvent,getAllEvents, getSingleEvent, getEventByName}=require("../controllers/EventController")
+const eventController =require("../controllers/EventController")
 //
 // router.use(
 //     cors({
@@ -16,11 +16,13 @@ const {testEvent,createEvent,getAllEvents, getSingleEvent, getEventByName}=requi
 //     })
 // )
 
-router.get('/test/event', testEvent);
-router.post('/event/create', createEvent);
-router.get('/event/:_id', getSingleEvent);
+router.get('/test/event', eventController.testEvent);
+//why am i not getting the eventController.createEvent even though its in my controller
+router.post('/event/create', eventController.createEvent);
+router.get('/event/:_id', eventController.getSingleEvent);
 
-router.get('/all/events', getAllEvents);
-router.get('/eventByName', getEventByName);
+router.get('/all/events', eventController.getAllEvents);
+router.get('/eventByName', eventController.getEventByName);
+router.put('/event/update/:_id', eventController.updateEvent);
 
 module.exports= router;

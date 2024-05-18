@@ -85,6 +85,40 @@ const getEventByName = async (req, res) => {
     }
 };
 
+const updateEvent = async (req, res) => {
+    try {
+        const { name, venue, image, location, price, max_allowed, date, time, going, access_token, short_desc} = req.body;
+        const eventId = req.params.id;
+        const event = await Event.findById(eventId);
+
+        if (event) {
+            event.name = name;
+            event.venue = venue;
+            event.image = image;
+            event.location = location;
+            event.price = price;
+            event.max_allowed = max_allowed;
+            event.date = date;
+            event.time = time;
+            event.going = going;
+            event.access_token = access_token;
+            event.short_desc = short_desc;
+
+            const updatedEvent = await event.save();
+
+            res.status(200).json({
+                message: 'Event updated successfully',
+                event: updatedEvent
+            });
+        } else {
+            res.status(404).json({ error: 'Event not found' });
+        }
+    } catch (error) {
+        console.error('Error updating event:', error);
+        res.status(500).json({ error: 'Failed to update event' });
+    }
+}
+
 const testEvent = (req, res) => {
     res.send(' EVENT Module is working');
 }
@@ -93,5 +127,6 @@ module.exports = {
     getAllEvents,
     getSingleEvent,
     testEvent,
-    getEventByName
+    getEventByName,
+    updateEvent
 }

@@ -5,16 +5,16 @@ const cors = require('cors');
 const router = express.Router();
 
 
-const { test, registerUser, loginUser, getProfile, logoutUser, getUsers } = require('../controllers/authController')
+const authController = require('../controllers/authController')
 
 
 
-router.get('/', test)
-router.get('/users', getUsers); //for user testcase
-router.post('/register', registerUser);
-router.post('/login', loginUser);
-router.get('/profile', getProfile);
-router.post('/logout', logoutUser);
+router.get('/', authController.test)
+router.get('/users', authController.getUsers); //for user testcase
+router.post('/register', authController.registerUser);
+router.post('/login', authController.loginUser);
+router.get('/profile', authController.getProfile);
+router.post('/logout', authController.logoutUser);
 module.exports = router;
 
 
