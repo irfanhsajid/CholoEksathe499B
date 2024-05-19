@@ -38,7 +38,7 @@ function IrfansContactForm() {
     <>
       <MainNav />
       <div className=" container">
-        <SectionHead title='CONNECT US' />
+        <SectionHead title='CONNECT US & BOOK YOUR VENUE' />
         <div id="contact" className="py-3 flex">
           <div className="w-1/2">
             <div className="contact-text">

@@ -69,7 +69,7 @@ const FaqComponent = () => {
     };
 
     return (
-        <div className="container w-2/3 mx-auto">
+        <div className="container w-2/3 mx-auto mt-3">
             {data.rows.map((row, index) => (
                 <div key={index} className="faq-row">
                     <div

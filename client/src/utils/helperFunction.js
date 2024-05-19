@@ -14,6 +14,14 @@ function formatDate(isoString) {
     
     return formattedDate;
   }
+// function to truncate string 
+function truncateString(input, maxLength) {
+  if (input.length <= maxLength) {
+    return input;
+  }
+  return input.slice(0, maxLength - 3) + '...';
+}
   export {
     formatDate,
+    truncateString,
   }
