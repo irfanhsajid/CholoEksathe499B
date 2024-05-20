@@ -9,10 +9,10 @@ const Layout = ({ data }) => {
         <div>
             <MainNav />
 
-            <div className="flex h-screen">
+            <div className="flex min-h-[100dvh]">
                 {/* Side Navigation */}
                 <div className="w-1/5 bg-gradient-to-br from-purple-600 to-black text-white">
-                    <ul className="p-2">
+                    <ul className="p-4">
                         {data?.map((data, index) => (
                             <li key={index} className="border-b py-2">
                                 <Link to={data?.link}> {data.name}  </Link>

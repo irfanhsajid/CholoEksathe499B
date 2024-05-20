@@ -15,6 +15,8 @@ router.post('/init', paymentController.initiatePayment);
 router.post('/success', paymentController.successPayment);
 router.post('/fail', paymentController.failedPayment);
 router.post('/cancel', paymentController.cancelledPayment);
+// to get all the data's:
+router.get('/payment/all', paymentController.getAllPayments);
 
 // IPN and validation routes
 router.post('/ipn', paymentController.ipn);

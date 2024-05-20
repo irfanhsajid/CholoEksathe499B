@@ -23,19 +23,15 @@
   --primary: 205 100% 25%;
   --themeForeground:  0 0% 100%;
 }
-@layer base {
+
   input,textarea, select {
-    @apply border border-primary p-2 rounded-md;
+    @apply border border-primary p-2 rounded-md focus:!outline-green-600;
   }
 
-  input:focus {
-    @apply !border-none;
+  input,textarea,select[data-error] {
+    @apply border-red-600 shadow-md;
   }
 
-  input[data-error] {
-    @apply border-red-600;
-  }
-}
 
 
 * {
@@ -103,4 +99,10 @@ h1 {
 .row-title-text{
   font-weight: 500;
   font-size: 16px;
+}
+.swal2-confirm, .swal2-cancel{
+  width: 150px;
+}
+.swal2-confirm{
+  background-color: #056847 !important;
 }

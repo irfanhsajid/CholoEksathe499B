@@ -7,13 +7,9 @@ import GlobalTable from "../../components/GlobalTable";
 // import { View } from "../../../icon";
 import { truncateString } from "../../utils/helperFunction";
 import { FiEdit } from "react-icons/fi";
-
 import { MdDeleteForever } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { IoIosAddCircleOutline } from "react-icons/io";
-
-
-
 
 const VenueList = () => {
     const { allVenues, getAllVenues, isLoading, deleteVenue } = useContext(EventContext);
@@ -41,7 +37,7 @@ const VenueList = () => {
             field: 'name',
             fieldName: 'Venue Name',
             width: '30%',
-            render: (value) => <p className="truncate">{truncateString(value, 20)}</p>
+            render: (value) => <p className="truncate">{truncateString(value, 25)}</p>
         },
         {
             field: 'maximum_capacity',
@@ -80,14 +76,13 @@ const VenueList = () => {
         }
     ];
     return (
-
         <>
             {
-                allVenues?.length > 0 ? <section className="mt-4">
+                allVenues?.length > 0 ? <section className="">
                     <Link to={'/event/new'}><button className="actionBtn !bg-secondary flex-icon w-44 float-end right-4 mt-2 absolute"> <IoIosAddCircleOutline /> Add Venue</button></Link>
                     
                     <GlobalTable
-                        title={`All Active Events List`}
+                        title={`All Venue Lists`}
                         columns={columns}
                         data={{ results: allVenues }}
                         isPagination={false}

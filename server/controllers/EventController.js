@@ -86,6 +86,26 @@ const getEventByName = async (req, res) => {
     }
 };
 
+// Function to delete an event by ID
+const deleteEvent = async (req, res) => {
+    try {
+      const eventId = req.params.id;
+      console.log("Received event ID:", eventId);
+      const event = await Event.findOneAndRemove({ _id: eventId });
+      if (event) {
+        console.log("Event deleted:", event);
+        res.status(200).json({ message: 'Event deleted successfully' });
+      } else {
+        console.log("Event not found");
+        res.status(404).json({ error: 'Event not found' });
+      }
+    } catch (error) {
+      console.error('Error deleting event:', error);
+      res.status(500).json({ error: 'Failed to delete event' });
+    }
+  };
+
+
 const updateEvent = async (req, res) => {
     try {
         const { name, venue, image, location, price, max_allowed, date, time, going, access_token, short_desc} = req.body;
@@ -129,5 +149,6 @@ module.exports = {
     getSingleEvent,
     testEvent,
     getEventByName,
-    updateEvent
+    updateEvent,
+    deleteEvent,
 }

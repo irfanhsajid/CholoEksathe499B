@@ -128,7 +128,7 @@ const GlobalTable = ({
                   '& .MuiPaginationItem-root': {
                     color: 'var(--blue)',
                     fontSize: '14px',
-                    border: '1px solid var(--blue)',
+                    border: '1px solid blue',
                   },
                   '& .MuiPaginationItem-root.MuiPaginationItem-ellipsis': {
                     border: 'none',
@@ -136,18 +136,18 @@ const GlobalTable = ({
                     margin: '0',
                   },
                   '& .MuiButtonBase-root': {
-                    background: 'var(--white) !important',
+                    background: 'white !important',
                     transition: 'all 0.3s ease',
                   },
                   '& .MuiButtonBase-root:hover': {
-                    background: 'var(--green) !important',
-                    color: 'var(--white) !important',
-                    border: '1px solid var(--green) !important',
+                    background: 'green !important',
+                    color: 'green !important',
+                    border: '1px solid green !important',
                   },
                   '& .Mui-selected': {
-                    background: 'var(--green) !important',
-                    color: 'var(--white) !important',
-                    border: '1px solid var(--green) !important',
+                    background: 'green !important',
+                    color: 'white !important',
+                    border: '1px solid green !important',
                   }
                 }}
                 page={page}

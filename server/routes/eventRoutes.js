@@ -23,6 +23,7 @@ router.get('/event/:_id', eventController.getSingleEvent);
 
 router.get('/all/events', eventController.getAllEvents);
 router.get('/eventByName', eventController.getEventByName);
-router.put('/event/update/:_id', eventController.updateEvent);
+router.put('/event/update/:id', eventController.updateEvent);
+router.delete('/event/:id', eventController.deleteEvent);
 
 module.exports= router;

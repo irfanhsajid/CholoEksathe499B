@@ -57,6 +57,7 @@ const EventContextProvider = ({ children }) => {
                 try {
                     const res = await axios.delete('/event/' + id);
                     console.log(res);
+                    setAllEvents((prev) => prev.filter((event) => event._id !== id));
                     Swal.fire({
                         title: "Deleted!",
                         text: "Your Data has been deleted.",
@@ -86,6 +87,7 @@ const EventContextProvider = ({ children }) => {
             if (result.isConfirmed) {
                 try {
                     const res = await axios.delete('/venueDelete/' + id);
+                    setAllVenues((prev) => prev.filter((venue) => venue._id !== id));
                     console.log(res);
                     Swal.fire({
                         title: "Deleted!",
@@ -181,6 +183,7 @@ const EventContextProvider = ({ children }) => {
                 venueDetails,
                 userEvents,
                 allPayments,
+                setAllEvents,
                 getAllEvents,
                 getEventDetails,
                 getPaymentDetails,

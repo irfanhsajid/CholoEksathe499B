@@ -159,6 +159,22 @@ const getUserEventByEmail = async (req, res) => {
     }
   }
 
+//   a function to get all the payment info's
+const getAllPayments = async (req, res) => {
+    try {
+      const payments = await Payment.find();
+  
+      if (payments.length > 0) {
+        res.status(200).json(payments);
+      } else {
+        res.status(404).json({ message: "No payments found" });
+      }
+    } catch (error) {
+      console.error('Error fetching all payments:', error);
+      res.status(500).json({ error: 'Internal Server Error' });
+    }
+  };
+
 const ipn = (req, res) => {
     console.log(req.body);
     res.send(req.body);
@@ -173,4 +189,5 @@ module.exports = {
     getPaymentDetails,
     getUserEventByEmail,
     ipn,
+    getAllPayments,
 };

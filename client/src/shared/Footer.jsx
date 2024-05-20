@@ -6,8 +6,8 @@ import { MdEmail } from "react-icons/md";
 
 const Footer = () => {
     return (
-        <div className=" text-white w-full mt-7 px-6  bg-cover bg-center absolute" style={{ backgroundImage: `url(${bgImage})` }}>
-            <div className="container mx-auto py-8 relative">
+        <div className=" text-white w-full mt-7 px-6  bg-cover bg-center" style={{ backgroundImage: `url(${bgImage})` }}>
+            <div className="container mx-auto py-8">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div className="col-span-1">
                         <h4 className="text-lg font-semibold">About Us</h4>

@@ -7,13 +7,9 @@ import GlobalTable from "../../components/GlobalTable";
 // import { View } from "../../../icon";
 import { formatDate } from "../../utils/helperFunction";
 import { FiEdit } from "react-icons/fi";
-
 import { MdDeleteForever } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { IoIosAddCircleOutline } from "react-icons/io";
-
-
-
 
 const EventList = () => {
     const { allEvents, getAllEvents, isLoading, deleteEvent } = useContext(EventContext);
@@ -85,14 +81,14 @@ const EventList = () => {
 
         <>
             {
-                allEvents?.length > 0 ? <section className="mt-4">
+                allEvents?.length > 0 ? <section className="">
                     <Link to={'/event/new'}><button className="actionBtn !bg-secondary flex-icon w-48 float-end right-4 mt-2 absolute"> <IoIosAddCircleOutline /> Add New Event</button></Link>
                     <GlobalTable
                         title={`All Active Events List`}
                         columns={columns}
                         data={{results:allEvents}}
-                        isPagination={false}
-                        paginationControl={handlePaginationControl}
+                        isPagination={true}
+                        paginationControl={handlePaginationControl(1,3)}
                     />
                 </section> : <section className="flex items-center justify-center h-50vh text-red-600 mt-20">
                     <Alert severity="info"> No Events Found !</Alert>

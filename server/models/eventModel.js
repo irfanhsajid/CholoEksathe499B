@@ -3,53 +3,52 @@ const mongoose = require('mongoose');
 const eventSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: true
+        default: null
     },
     short_desc: {
         type: String,
-        required: true
+        default: null
     },
     venue: {
         type: String,
-        required: true
+        default: null
     },
     image: {
         type: String,
-        required: true,
+        default: null
     },
     location: {
         type: String,
-        required: true
+        default: null
     },
     price: {
         type: Number,
-        required: true
+        default: 0
     },
     max_allowed: {
         type: Number,
-        required: true
+        default: 0
     },
     date: {
         type: Date,
-        required: true
+        default: null
     },
     time: {
         type: String,
-        required: true
+        default: null
     },
     going: {
         type: Number,
-        required: true
+        default: 0
     },
     access_token: {
         type: String,
-        required: true
+        default: null
     },
     category: {
         type: String,
-        required: true
-    },
-
+        default: null
+    }
 });
 
 const Event = mongoose.model('Event', eventSchema);
