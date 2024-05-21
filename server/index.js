@@ -6,6 +6,9 @@ const cookieParser = require('cookie-parser');
 const dotenv = require('dotenv').config();
 const app = express();
 
+// Increase the MongoDB query timeout to 30 seconds
+mongoose.set('maxTimeMS', 30000);
+
 //database connection 
 mongoose.connect(process.env.MONGO_URL)
     .then(() => console.log('Database is Connected.'))

@@ -61,6 +61,7 @@ const AddNewEvent = () => {
                     <input
                         type="text"
                         id="name"
+                        placeholder='E.g: https://i.ibb.co/CBTMDyC/Buetians.jpg'
                         {...register('image', { required: "One poster image is required" })}
                         className="shadow  border rounded w-full py-2 px-3 text-gray-700 leading-tight"
                         data-error={errors?.image?.message}
@@ -116,6 +117,7 @@ const AddNewEvent = () => {
                         <input
                             type="string"
                             id="access_token"
+                            placeholder='E.g: xAyB2p'
                             {...register('access_token', { required: true })}
                             className="shadow  border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-secondary focus:shadow-outline"
                         />
@@ -130,6 +132,7 @@ const AddNewEvent = () => {
                             type="number"
                             id="price"
                             {...register('price', { required: true })}
+                            placeholder='50'
                             className="shadow  border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-secondary focus:shadow-outline"
                         />
                         {errors.price && <span className="text-red-500">This field is required</span>}
@@ -174,9 +177,7 @@ const AddNewEvent = () => {
                         className="shadow  border rounded w-full py-2 px-3 text-gray-700 leading-tight"
                     />
                 </div>
-
-                {/* Add other input fields for max_allowed, date, time, going, access_token, image, short_desc, and category */}
-
+                
                 <div className="flex items-center justify-between">
                     <button
                         type="submit"

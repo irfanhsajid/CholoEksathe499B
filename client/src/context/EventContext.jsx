@@ -29,7 +29,7 @@ const EventContextProvider = ({ children }) => {
             setIsLoading(false);
         }
     };
-
+    // get Single Event Details 
     const getEventDetails = async (id) => {
         setIsLoading(true);
         try {
@@ -105,7 +105,6 @@ const EventContextProvider = ({ children }) => {
         });
     }
 
-
     const getPaymentDetails = async (id) => {
         setIsLoading(true);
         try {
@@ -118,6 +117,7 @@ const EventContextProvider = ({ children }) => {
             setIsLoading(false)
         }
     }
+
     // Get all the events
     const getAllVenues = async () => {
         setIsLoading(true);
@@ -131,6 +131,8 @@ const EventContextProvider = ({ children }) => {
             setIsLoading(false);
         }
     };
+
+    // get single venue Details 
     const getVenueDetails = async (id) => {
         setIsLoading(true);
         try {
@@ -158,8 +160,8 @@ const EventContextProvider = ({ children }) => {
 
 
     // get all payment info's 
-      // Get all the events
-      const getAllPayments = async () => {
+    // Get all the events
+    const getAllPayments = async () => {
         setIsLoading(true);
         try {
             const res = await axios.get('/payment/all');
