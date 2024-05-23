@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const venueSchema = new mongoose.Schema({
     venue_Id: {
         type: Number,
-        required: true,
+        required: false,    
         unique: true
     },
     name: {
@@ -13,7 +13,7 @@ const venueSchema = new mongoose.Schema({
     },
     location: {
         type: String,
-        required: true
+        required: false,
     },
     short_desc: {
         type: String,

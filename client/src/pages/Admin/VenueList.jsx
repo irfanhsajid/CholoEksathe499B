@@ -70,7 +70,7 @@ const VenueList = () => {
             isAlignmentCenter: true,
             width: '30%',
             render: (value) => <span className="flex-icon !gap-4">
-                <Link to={`/editEvent/${value?._id}`}><FiEdit className="text-green-500 " /> </Link>
+                <Link to={`/editVenue/${value?._id}`}><FiEdit className="text-green-500 " /> </Link>
                 <MdDeleteForever className="text-red-500 text-xl" onClick={() => deleteVenue(value?._id)} />
             </span>
         }
@@ -79,7 +79,7 @@ const VenueList = () => {
         <>
             {
                 allVenues?.length > 0 ? <section className="">
-                    <Link to={'/event/new'}><button className="actionBtn !bg-secondary flex-icon w-44 float-end right-4 mt-2 absolute"> <IoIosAddCircleOutline /> Add Venue</button></Link>
+                    <Link to={'/venue/new'}><button className="actionBtn !bg-secondary flex-icon w-44 float-end right-4 mt-2 absolute"> <IoIosAddCircleOutline /> Add Venue</button></Link>
                     
                     <GlobalTable
                         title={`All Venue Lists`}

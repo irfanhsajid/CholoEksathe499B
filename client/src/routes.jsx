@@ -24,6 +24,8 @@ import MyFeedback from "./pages/User/MyFeedback";
 import MyChat from "./pages/User/MyChat";
 import EditEvent from "./pages/Admin/EditEvent";
 import AddNewEvent from "./pages/Admin/AddNewEvent";
+import AddNewVenue from "./pages/Admin/AddNewVenue";
+import EditVenue from "./pages/Admin/EditVenue";
 
 const AllRoutes = () => {
   const { user } = useContext(UserContext)
@@ -38,7 +40,9 @@ const AllRoutes = () => {
               <Route path='/eventList' element={<EventsList />} />
               <Route path='/payment' element={<PaymentList />} />
               <Route path='/editEvent/:id' element={<EditEvent />} />
+              <Route path='/editVenue/:id' element={<EditVenue />} />
               <Route path='/event/new' element={<AddNewEvent />} />
+              <Route path='/venue/new' element={<AddNewVenue />} />
             </Route>
           }
           {

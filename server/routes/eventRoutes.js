@@ -5,14 +5,15 @@ const cors = require('cors');
 
 const router = express.Router();
 const eventController =require("../controllers/EventController")
-//
+
+
 // router.use(
 //     cors({
 //         credentials: true,
 //         origin: "http://localhost:3000",
 //         // origin: "https://techforing-job-portal.vercel.app",
-//
-//
+
+
 //     })
 // )
 
