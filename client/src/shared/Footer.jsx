@@ -6,17 +6,17 @@ import { MdEmail } from "react-icons/md";
 
 const Footer = () => {
     return (
-        <div className=" text-white w-full mt-7 px-6  bg-cover bg-center" style={{ backgroundImage: `url(${bgImage})` }}>
-            <div className="container mx-auto py-8">
+        <div className="  text-white w-full  mt-7 px-6  bg-cover bg-center" style={{ backgroundImage: `url(${bgImage})` }}>
+            <div className="container w-[1280px]  mx-auto py-8">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div className="col-span-1">
                         <h4 className="text-lg font-semibold">About Us</h4>
                         <div className="border-b border-secondary w-20 mt-2"></div>
                         <p className="text-sm text-gray-300 mt-2">We the CholoEksathe people offer the best quality of services having top most professional experiences. Youll feel awesome with us In Sha Allah! *,*</p>
                         <div className="flex flex-col gap-2 mt-3">
-                            <p className="text-sm font-light flex-icon"><MdLocalPhone className='text-xl text-secondary' key={1}/>015-677-12427</p>
-                            <p className="text-sm font-light flex-icon"><FaStreetView className='text-xl text-secondary' key={2}/>184/ka, #4, kuril, Dhaka</p>
-                            <p className="text-sm font-light flex-icon"><MdEmail className='text-xl text-secondary' key={3}/>info@CholoEksathe.com</p>
+                            <p className="text-sm font-light flex-icon"><MdLocalPhone className='text-xl text-secondary' key={1} />015-677-12427</p>
+                            <p className="text-sm font-light flex-icon"><FaStreetView className='text-xl text-secondary' key={2} />184/ka, #4, kuril, Dhaka</p>
+                            <p className="text-sm font-light flex-icon"><MdEmail className='text-xl text-secondary' key={3} />info@CholoEksathe.com</p>
                         </div>
                     </div>
                     <div className="col-span-1">

@@ -61,9 +61,9 @@ const EventDetails = () => {
         return <LoadingComponent />
     }
     return (
-        <main className="min-h-[100dvh] mx-auto md:w-[1280px] mb-10">
+        <main className="min-h-[100dvh] mb-10">
             <MainNav />
-            <div className="container flex flex-col gap-24">
+            <div className="container  mx-auto md:w-[1280px] flex flex-col gap-24">
                 <section>
                     <SectionHead
                         title={eventDetails?.name}

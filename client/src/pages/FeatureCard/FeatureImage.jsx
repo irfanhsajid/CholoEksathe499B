@@ -10,13 +10,13 @@ import SectionHead from '../../components/SectionHead';
 
 const FeatureImgCard = () => {
     return (
-        <div className='px-14'>
+        <div className='md:w-[1280px] mx-auto'>
             <SectionHead
                 title='Embrace Your Memories'
                 description='All the events are amazing.! We Provide the best quality of Event packages. Definitely, You will be pleased with our services. Just Drop a call for any package Booking. Feel Free to have a event with CholoEksathe'
             />
             <div className="w-full">
-                <div className=" py-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  justify-items-center gap-y-5">
+                <div className=" py-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  justify-items-center gap-5">
                     <div className="place-card">
                         <img src={school} alt="" className="w-full" />
                     </div>
