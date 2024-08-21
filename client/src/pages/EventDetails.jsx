@@ -30,7 +30,7 @@ const EventDetails = () => {
     const { id } = useParams();
     const errorState = errors?.token?.message;
     const [successMessage, setSuccessMessage] = useState('');
-    
+
     console.log({ eventDetails });
 
     useEffect(() => {
@@ -47,7 +47,7 @@ const EventDetails = () => {
             cus_name: user?.name,
             cus_email: user?.email,
             access_token: data?.token,
-            event_date:eventDetails?.date,
+            event_date: eventDetails?.date,
         }
         console.log(headers);
         await axios.post('/init', payload)
@@ -61,7 +61,7 @@ const EventDetails = () => {
         return <LoadingComponent />
     }
     return (
-        <main className="min-h-[100dvh] mb-10">
+        <main className="min-h-[100dvh] mx-auto md:w-[1280px] mb-10">
             <MainNav />
             <div className="container flex flex-col gap-24">
                 <section>
