@@ -12,22 +12,22 @@ import ImageSlider from "../components/ImageSlider";
 
 const VenueDetails = () => {
     const { venueDetails, getVenueDetails, isLoading } = useContext(EventContext);
-   
+
     const { id } = useParams();
-  
-    
+
+
     console.log({ venueDetails });
 
     useEffect(() => {
         getVenueDetails(id)
     }, [])
 
-   
+
     if (isLoading) {
         return <LoadingComponent />
     }
     return (
-        <main className="min-h-[100dvh] mb-10">
+        <main className="min-h-[100dvh] md:w-[1280px] mx-auto mb-10">
             <MainNav />
             <div className="container flex flex-col gap-24">
                 <section>
@@ -44,13 +44,13 @@ const VenueDetails = () => {
                             <p> <span className="font-bold">Venue:</span> {venueDetails?.name}</p>
                             <p> <span className="text-secondary">{venueDetails?.maximum_capacity}</span> People can Stay Here</p>
                             <p> Ticket Price: <span className="text-secondary font-bold ">{venueDetails?.price}</span> TK</p>
-                           </div>
+                        </div>
                     </div>
                     <br />
                     <SectionHead
                         title={"More Related images"}
                     />
-                    <div className="flex items-center justify-center p-4 shadow-md rounded-md"> <ImageSlider data={venueDetails?.image}/> </div>
+                    <div className="flex items-center justify-center p-4 shadow-md rounded-md"> <ImageSlider data={venueDetails?.image} /> </div>
                 </section>
                 <section>
                     <SectionHead
