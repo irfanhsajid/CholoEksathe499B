@@ -8,8 +8,8 @@ import Footer from './shared/Footer';
 import EventContextProvider from './context/EventContext';
 
 //cors policy setup
-// axios.defaults.baseURL = 'https://auth-skeleton-api.vercel.app';
-axios.defaults.baseURL = 'http://localhost:7000';
+axios.defaults.baseURL = 'https://cholo-eksathe499-b.vercel.app';
+// axios.defaults.baseURL = 'http://localhost:7000';
 axios.defaults.withCredentials = true;
 
 function App() {
@@ -29,7 +29,7 @@ function App() {
           pauseOnHover
           theme="light"
           transition:Bounce />
-          
+
         <EventContextProvider>
           <AllRoutes />
         </EventContextProvider>

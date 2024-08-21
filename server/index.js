@@ -26,7 +26,8 @@ app.use(express.urlencoded({ extended: false }))
 
 app.use(cors({
     credentials: true,
-    origin: "http://localhost:3000", // or "https://techforing-job-portal.vercel.app"
+    // origin: "http://localhost:3000", // or "https://techforing-job-portal.vercel.app"
+    origin: "https://cholo-eksathe.vercel.app/", // or "https://techforing-job-portal.vercel.app"
 }));
 
 app.use('/', require('./routes/authRoutes'));
