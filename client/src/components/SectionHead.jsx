@@ -5,8 +5,8 @@ const SectionHead = ({
     title = "This is A Section Title",
     description = "" }) => {
     return (
-        <div className={ `container flex flex-col items-center justify-center py-4 ${className}`}>
-            <h2 className='font-bold text-primary text-[24px] py-2' dangerouslySetInnerHTML={{__html:title}}></h2>
+        <div className={`container md:w-[1280px] mx-auto flex flex-col items-center justify-center py-4 ${className}`}>
+            <h2 className='font-bold text-primary text-[24px] py-2' dangerouslySetInnerHTML={{ __html: title }}></h2>
             {
                 description && <p className="text-gray-500 w-1/2 text-center">
                     {description}

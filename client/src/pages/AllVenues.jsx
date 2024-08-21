@@ -18,7 +18,7 @@ const AllVenues = () => {
         return <LoadingComponent />
     }
     return (
-        <main>
+        <main className="md:w-[1280px] mx-auto">
             <MainNav />
             <SectionHead
                 title="All Available Venues"

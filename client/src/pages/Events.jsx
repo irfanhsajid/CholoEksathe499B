@@ -20,15 +20,15 @@ const Events = () => {
     }
 
     return (
-        <main className="min-h-screen">
+        <main className="min-h-screen container md:w-[1280px] mx-auto">
             <MainNav />
             <SectionHead
                 title="Event Highlights"
                 description="Discover all the exciting details about our upcoming events. Find comprehensive information on schedules, venues, and special activities. Join us for an unforgettable experience filled with fun and memories."
             />
-            <section className=" container py-2 grid grid-cols-1 md:grid-cols-3 gap-10 justify-items-center"
+            <section className=" py-2 grid grid-cols-1 md:grid-cols-3 gap-10 justify-items-center"
             >
-               <EventCards eventsData={allEvents}/>
+                <EventCards eventsData={allEvents} />
             </section>
 
         </main>

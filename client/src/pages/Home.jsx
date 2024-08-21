@@ -16,7 +16,7 @@ import EventSchedule from "../components/EventSchedule";
 import VenueImgCard from "../components/VenueImgCard";
 const Home = () => {
     const { getAllEvents, allEvents, isLoading, allVenues, getAllVenues } = useContext(EventContext)
-    
+
     useEffect(() => {
         getAllEvents();
         getAllVenues();
@@ -38,12 +38,12 @@ const Home = () => {
 
                 <FeatureImgCard />
 
-                <section>
+                <section className="md:w-[1280px] mx-auto">
                     <SectionHead
                         title="Find all Exciting Venues"
                         description="Discover all the exciting details about our upcoming events. Find comprehensive information on schedules, venues, and special activities. Join us for an unforgettable experience filled with fun and memories."
                     />
-                    <VenueImgCard allVenuesData={limitedVenues}/>
+                    <VenueImgCard allVenuesData={limitedVenues} />
                 </section>
                 {/* <section>
                     <SectionHead
@@ -56,15 +56,15 @@ const Home = () => {
                     </div>
                 </section> */}
                 <section className="mt-4">
-                <SectionHead
+                    <SectionHead
                         title="Frequently Asked Questions"
                         description="Got questions? We've got answers! Our FAQ section covers everything you need to know about our events, from schedules and venues to special activities and booking details. Find all the information you need to ensure an unforgettable experience."
                     />
-                    <FaqComponent/>
+                    <FaqComponent />
                     {/* <div className="due">FAQ</div> */}
                 </section>
                 <section className="mt-10">
-                   <EventSchedule/>
+                    <EventSchedule />
                 </section>
                 {/* <section>
                 <SectionHead

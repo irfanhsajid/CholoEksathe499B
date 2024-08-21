@@ -13,13 +13,13 @@ import LoadingComponent from '../components/Loading';
 
 function IrfansContactForm() {
   const [state, handleSubmit] = useForm("xzbopvgy");
-  
+
 
   const { getAllVenues, allVenues, isLoading } = useContext(EventContext)
   useEffect(() => {
-      getAllVenues();
+    getAllVenues();
   }, [])
-  console.log( state )
+  console.log(state)
 
   useEffect(() => {
     if (state.succeeded) {
@@ -31,13 +31,13 @@ function IrfansContactForm() {
 
   // display loading animation
   if (isLoading) {
-      return <LoadingComponent />
+    return <LoadingComponent />
   }
 
   return (
     <>
       <MainNav />
-      <div className=" container">
+      <div className="md:w-[1280px] mx-auto container">
         <SectionHead title='CONNECT US & BOOK YOUR VENUE' />
         <div id="contact" className="py-3 flex">
           <div className="w-1/2">
@@ -52,13 +52,13 @@ function IrfansContactForm() {
               </div>
               <div className='flex gap-8 mt-5 justify-center me-[10rem] '>
                 <p className='flex-icon'>
-                  <FaFacebook className='text-secondary'/> Facebook
+                  <FaFacebook className='text-secondary' /> Facebook
                 </p>
                 <p className='flex-icon'>
-                  <FaWhatsappSquare className='text-secondary'/> WhatsApp
+                  <FaWhatsappSquare className='text-secondary' /> WhatsApp
                 </p>
                 <p className='flex-icon'>
-                 <FaTwitter className='text-secondary'/> Twitter
+                  <FaTwitter className='text-secondary' /> Twitter
                 </p>
               </div>
             </div>
@@ -73,14 +73,14 @@ function IrfansContactForm() {
               <input className="w-full m-2 p-2" id="email" type="email" name="email" placeholder="Your Email" required />
               <ValidationError field="email" prefix="Email" errors={state.errors} />
               <br />
-             <select name="venue_name" id="" defaultValue="" className='w-full m-2 p-2' required>
-              <option value="" disabled selected> Choose Venue</option>
-              {
-                allVenues?.map((item, index)=>(
-                  <option key={index} value={item?.name}>{item?.name}</option>
-                ))
-              }
-             </select>
+              <select name="venue_name" id="" defaultValue="" className='w-full m-2 p-2' required>
+                <option value="" disabled selected> Choose Venue</option>
+                {
+                  allVenues?.map((item, index) => (
+                    <option key={index} value={item?.name}>{item?.name}</option>
+                  ))
+                }
+              </select>
               <br />
               <input className="w-full m-2 p-2" id="event-date" type="date" name="event-date" placeholder="Your Preferable Date" required />
               <ValidationError field="event-date" prefix="Date" errors={state.errors} />
